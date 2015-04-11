@@ -40,7 +40,7 @@ def login():
 
         flash('Wrong email or password', 'error-message')
 
-    return render_template(url_for('auth.login'), form=form)
+    return render_template("auth/login.html", form=form)
 
 @mod_auth.route('/logout/', methods=['GET', 'POST'])
 def logout():
