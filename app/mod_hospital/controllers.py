@@ -18,7 +18,7 @@ from app.mod_hospital.models import Hospital
 mod_hospital = Blueprint('hospital', __name__, url_prefix='/hospital')
 
 # Set the route and accepted methods
-@mod_auth.route('/manage/')
+@mod_hospital.route('/manage/')
 def manage():
     hospital = Hospital.query.filter_by(name="Red Crescent Hospital")
 
