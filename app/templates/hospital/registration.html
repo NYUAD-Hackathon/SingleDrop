@@ -2,7 +2,7 @@
 {% block body %}
   <h2>Registration</h2>
   {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
-  <form action="http://localhost:5000/registration/" method="post">
+  <form action="{{ url_form('hospital.registration') }}" method="post">
       <dl>
         <dt>Name: </dt>
         <dd><input type="text" name="name"> </dd>

@@ -42,11 +42,11 @@ def login():
 
             flash('Welcome %s' % user.name)
             print user
-            return redirect("user")
+            return redirect(url_for('user.profile'))
 
         flash('Wrong email or password', 'error-message')
     print "wrong form"
-    return render_template("auth/login.html", form=form)
+    return render_template("user/login.html", form=form)
 
 @mod_user.route('/logout/', methods=['GET', 'POST'])
 def logout():
@@ -54,7 +54,7 @@ def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
 
-    return redirect(url_for('index'))
+    return redirect(url_for('index.index'))
 
 @mod_user.route('/registration/', methods=['GET', 'POST'])
 def registration():
@@ -88,20 +88,20 @@ def registration():
         print "user created"
         print user
 
-        return redirect("login")
+        return redirect(url_for('user.login'))
     print form.errors
     print "wrong form"
-    return render_template("registration.html", form=form)
+    return render_template("user/registration.html", form=form)
 
 @mod_user.route('/profile/', methods=['GET'])
 def user_profile():
     # session['user_id'] = 1
     user = User.query.filter_by(id=session['user_id']).first()
     # warning passwords
-    return render_template("user_edit.html", user=user)
+    return render_template("user/edit.html", user=user)
 
 @mod_user.route('/edit/', methods=['GET', 'POST'])
-def user_edit():
+def edit():
     form = EditForm(request.form)
     user = User.query.filter_by(id=session['user_id']).first()
 
@@ -115,4 +115,4 @@ def user_edit():
         db.session.add(user)
         db.session.commit()
 
-    return render_template("user_edit.html", user=user, form=form)
+    return render_template("user/edit.html", user=user, form=form)
