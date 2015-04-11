@@ -9,17 +9,22 @@ from werkzeug import check_password_hash, generate_password_hash
 from app import db
 
 # Import module forms
-from app.mod_auth.forms import LoginForm
+#from app.mod_auth.forms import LoginForm
 
 # Import module models (i.e. User)
-from app.mod_auth.models import User
+from app.mod_hospital.models import Hospital
 
 # Define the blueprint: 'auth', set its url prefix: app.url/auth
-mod_auth = Blueprint('auth', __name__, url_prefix='/auth')
+mod_hospital = Blueprint('hospital', __name__, url_prefix='/hospital')
 
 # Set the route and accepted methods
-@mod_auth.route('/signin/', methods=['GET', 'POST'])
-def signin():
+@mod_auth.route('/manage/')
+def manage():
+    hospital = Hospital.query.filter_by(name="Red Crescent Hospital")
+
+    return render_template(url_for('hospital.manage'))
+
+'''def signin():
 
     # If sign in form is submitted
     form = LoginForm(request.form)
@@ -39,4 +44,4 @@ def signin():
 
         flash('Wrong email or password', 'error-message')
 
-    return render_template("auth/signin.html", form=form)
+    return render_template("auth/signin.html", form=form)'''

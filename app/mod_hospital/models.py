@@ -13,27 +13,35 @@ class Base(db.Model):
                                            onupdate=db.func.current_timestamp())
 
 # Define a User model
-class User(Base):
+class Hospital(Base):
 
-    __tablename__ = 'auth_user'
+    __tablename__ = 'hospital'
 
     # User Name
     name    = db.Column(db.String(128),  nullable=False)
 
     # Identification Data: email & password
-    email    = db.Column(db.String(128),  nullable=False,
-                                            unique=True)
+    #email    = db.Column(db.String(128),  nullable=False,
+    #                                        unique=True)
     password = db.Column(db.String(192),  nullable=False)
 
+    # Location
+    city = db.Column(db.String(128), nullable=False)
+    neighborhood = db.Column(db.String(128), nullable=False)
+
+    lat = db.Column(db.Float, nullable=False)
+    long = db.Column(db.Float, nullable=False)
+
     # Authorisation Data: role & status
-    role     = db.Column(db.SmallInteger, nullable=False)
-    status   = db.Column(db.SmallInteger, nullable=False)
+    #role     = db.Column(db.SmallInteger, nullable=False)
+    #status   = db.Column(db.SmallInteger, nullable=False)
 
     # New instance instantiation procedure
-    def __init__(self, name, email, password):
+    #def __init__(self, name, email, password):
+    def __init__(self, name, password):
 
         self.name     = name
-        self.email    = email
+        #self.email    = email
         self.password = password
 
     def __repr__(self):
