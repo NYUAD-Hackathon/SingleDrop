@@ -12,16 +12,16 @@ from app import db
 from app.mod_auth.forms import LoginForm
 
 # Import module models (i.e. User)
-from app.mod_auth.models import User
+from app.mod_user.models import User
 
 # Define the blueprint: 'auth', set its url prefix: app.url/auth
 mod_auth = Blueprint('auth', __name__, url_prefix='/auth')
 
 # Set the route and accepted methods
-@mod_auth.route('/signin/', methods=['GET', 'POST'])
-def signin():
+@mod_auth.route('/login/', methods=['GET', 'POST'])
+def login():
 
-    # If sign in form is submitted
+    # If login form is submitted
     form = LoginForm(request.form)
 
     # Verify the sign in form
@@ -35,8 +35,16 @@ def signin():
 
             flash('Welcome %s' % user.name)
 
-            return redirect(url_for('auth.home'))
+            return redirect(url_for('user.profile'))
 
         flash('Wrong email or password', 'error-message')
 
-    return render_template("auth/signin.html", form=form)
+    return render_template(url_for('auth.login'), form=form)
+
+@mod_auth.route('/logout/', methods=['GET', 'POST'])
+def logout():
+
+    session.pop('logged_in', None)
+    flash('You were logged out')
+
+    return redirect(url_for('index'))
