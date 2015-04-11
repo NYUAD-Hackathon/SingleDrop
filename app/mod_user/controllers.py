@@ -38,6 +38,7 @@ def login():
         print "USER PASS:", user.password
         if user and user.password == form.password.data:
 
+            session['logged_in'] = True;
             session['user_id'] = user.id
 
             flash('Welcome %s' % user.name)
@@ -52,6 +53,7 @@ def login():
 def logout():
 
     session.pop('logged_in', None)
+    session.pop('user_id', None)
     flash('You were logged out')
 
     return redirect('/')

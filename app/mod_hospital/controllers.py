@@ -56,6 +56,7 @@ def login():
 		print "USER PASS:", hospital.password
 		if hospital and hospital.password == form.password.data:
 
+			session['logged_in'] = True
 			session['hospital_id'] = hospital.id
 
 			flash('Welcome %s' % hospital.name)
@@ -70,6 +71,7 @@ def login():
 def logout():
 
 	session.pop('logged_in', None)
+	session.pop('hospital_id', None)
 	flash('You were logged out')
 
 	return redirect("/")

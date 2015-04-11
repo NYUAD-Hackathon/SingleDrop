@@ -6,7 +6,7 @@
 		<ul>
 			<li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
 			<li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
-			{% if session.get('hospital_id') == None and session.get('user_id') == None %}
+			{% if not session.get('logged_in') %}
 			<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.registration') }}">Register</a></li>
 			<li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
 			{% elif session.get('user_id') %}
