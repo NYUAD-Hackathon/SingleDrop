@@ -5,7 +5,7 @@ from flask import Flask, request, session, g, redirect, url_for, \
 from contextlib import closing
 
 # configuration
-DATABASE = '/tmp/singledrop.db'
+DATABASE = '/tmp/flaskr.db'
 DEBUG = True
 SECRET_KEY = '}\xce\xd1\xa2\xf0t\xbd:\xd0\x16r\xaa\x9d\xe9\x1c@.\x9f\xe4\xb1B\x93\x8fa'
 USERNAME = 'admin'
