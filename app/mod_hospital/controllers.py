@@ -22,4 +22,4 @@ mod_hospital = Blueprint('hospital', __name__, url_prefix='/hospital')
 def manage():
     hospital = Hospital.query.filter_by(name="Red Crescent Hospital")
 
-    return render_template("hospital.manage.html")
+    return render_template("hospital.html")

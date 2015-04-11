@@ -73,7 +73,7 @@ def registration():
         city = form.city.data
         neighborhood = form.neighborhood.data
 
-        address = "Al Khubeirah" + ", " + "Abu Dhabi"
+        address = neighborhood + ", " + city
         location = geolocator.geocode(address)
 
         lat = location.latitude
