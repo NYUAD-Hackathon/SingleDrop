@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'CaviarDreams';
-    src: url('./CaviarDreams.eot') format('eot'),
-    url('./CaviarDreams.woff') format('woff'),
-    url('./CaviarDreams.ttf') format('truetype'),
-    url('./CaviarDreams.svg') format('svg');
+    src: url('./Font/CaviarDreams.eot') format('eot'),
+    url('./Font/CaviarDreams.woff') format('woff'),
+    url('./Font/CaviarDreams.ttf') format('truetype'),
+    url('./Font/CaviarDreams.svg') format('svg');
 }
 
 body {
@@ -695,15 +695,18 @@ div.bas{
 
 div.home{
     border-bottom: 2px solid black;
-    text-align: center;
+    margin-left:20%;
+    margin-right: 23%;
     margin-top: 70px;
 }
 
 div.home >p {
     font-size: 37px;
+    margin-left: 12%;
     position: relative;
-    top: 17px;
+    top: 20px;
     font-family: 'CaviarDreams', Sans-Serif;
+    font-style: bold;
 }
 div.liens{
    float: left;
