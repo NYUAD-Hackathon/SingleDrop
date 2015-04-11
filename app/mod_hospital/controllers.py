@@ -96,3 +96,22 @@ def registration():
 	print form.errors
 	print "wrong form"
 	return render_template("hospital/registration.html", form=form)
+
+@mod_hospital.route('/closest/')
+def closest():
+    print "closest"
+    hosp = Hospital.query.filter_by(id=session['hospital_id']).first()
+    users = User.query.all()
+    for u in users:
+        u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
+    users = sorted(users, key=lambda x: x.distance)[:n]
+    return render_template("closest.html", users=users)
+
+
+def distance(lat1, lon1, lat2, lon2):
+    lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
+    c = 2 * math.asin(math.sqrt(a)) 
+    return 6367 * c
