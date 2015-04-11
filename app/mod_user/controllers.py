@@ -94,7 +94,7 @@ def registration():
     return render_template("user/registration.html", form=form)
 
 @mod_user.route('/profile/', methods=['GET'])
-def user_profile():
+def profile():
     # session['user_id'] = 1
     user = User.query.filter_by(id=session['user_id']).first()
     # warning passwords
