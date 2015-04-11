@@ -1,6 +1,97 @@
-<p> CLOSEST </p>
-{% for u in users %}
-    {{ u.name }}
-    {{ u.city }}
-    {{ u.neighborhood }}
-{% endfor %}
+{% extends "layout.html" %}
+{% block body %}
+<header>
+	<nav>
+		<a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='pictures/logo.png') }}" style="width:200px" alt="" /></a>
+		<ul>
+			<li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
+			<li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
+			{% if not session.get('logged_in') %}
+			<li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
+			<li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
+			{% elif session.get('user_id') %}
+			<li class="menuItem"><a href="{{ url_for('user.profile') }}">Profile</a></li>
+			<li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
+			{% else %}
+			<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
+			<li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
+			{% endif %}
+			<li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div class="home">
+	<p>Find Donors</p>
+</div>
+
+<div class="form">
+	<table>
+		<thead>
+			<tr>
+				<th width="100px">
+					<p>
+						<label for="name">Name: </label></br>
+					</p>
+				</th>
+				<th width="100px">
+					<p>
+						<label for="city">City: </label></br>
+					</p>
+				</th>
+				<th width="100px">
+					<p>
+						<label for="neighborhood">Neighborhood: </label></br>
+					</p>
+				</th>
+				<th width="100px">
+					<p>
+						<label for="phone">Phone: </label></br>
+					</p>
+				</th>
+				<th colspace=2>
+					<p>
+						<label for="phone">Contact: </label></br>
+					</p>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for u in users %}
+			<tr>
+				<td width="100px">
+					<p>
+						<label>{{ u.name }}</label></br>
+					</p>
+				</td>
+				<td width="100px">
+					<p>
+						<label>{{ u.city }}</label></br>
+					</p>
+				</td>
+				<td width="100px">
+					<p>
+						<label>{{ u.neighborhood }}</label></br>
+					</p>
+				</td>
+				<td width="100px">
+					<p>
+						<label>{{ u.phone }}</label></br>
+					</p>
+				</td>
+				<td width="100px">
+					<p>
+						<label><a class="contact" href="dummy">Message</a></label>
+					</p>
+				</td>
+				<td width="100px">
+					<p>
+						<label><a class="contact" href="dummy">Call</a></label>
+					</p>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

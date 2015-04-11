@@ -313,9 +313,24 @@ input[type=submit].iscrit {
 	margin-top: 20px;
 }
 
-table{
+table {
 	border-spacing: 7px;
-	margin-left: 95px;
+	margin-left: 60px;
+}
+
+th {
+	text-align: left;
+}
+
+a.contact {
+	text-decoration: none;
+	font-weight: bold;
+	color: #B82925;
+	border-bottom: 1px solid #D32F2F;
+}
+
+a.contact:hover, a.contact:focus {
+	border-bottom: 1px dashed #D32F2F;
 }
 
 div.form {
@@ -740,7 +755,6 @@ div.liens a {
 	border: none;
 }
 
-<<<<<<< HEAD
 div.liens ul li ul li {
 	float: left;
 	display: none;
