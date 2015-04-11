@@ -15,7 +15,7 @@ class Base(db.Model):
 # Define a User model
 class User(Base):
 
-    __tablename__ = 'auth_user'
+    __tablename__ = 'user'
 
     # User Name
     name    = db.Column(db.String(128),  nullable=False)
@@ -25,16 +25,27 @@ class User(Base):
                                             unique=True)
     password = db.Column(db.String(192),  nullable=False)
 
+    phone = db.Column(db.String(15),  nullable=False)
+
+    blood_type = db.Column(db.String(3),  nullable=False)
+
+    city = db.Column(db.String(128),  nullable=False)
+    neighborhood = db.Column(db.String(128),  nullable=False)
+
     # Authorisation Data: role & status
-    role     = db.Column(db.SmallInteger, nullable=False)
-    status   = db.Column(db.SmallInteger, nullable=False)
+    #role     = db.Column(db.SmallInteger, nullable=False)
+    #status   = db.Column(db.SmallInteger, nullable=False)
 
     # New instance instantiation procedure
-    def __init__(self, name, email, password):
+    def __init__(self, name, email, password, phone, blood_type, city, neighborhood):
 
-        self.name     = name
-        self.email    = email
-        self.password = password
+        self.name         = name
+        self.email        = email
+        self.password     = password
+        self.phone        = phone
+        self.blood_type   = blood_type
+        self.city         = city
+        self.neighborhood = neighborhood
 
     def __repr__(self):
         return '<User %r>' % (self.name)
