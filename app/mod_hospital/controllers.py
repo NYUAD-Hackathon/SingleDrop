@@ -15,6 +15,9 @@ from app.mod_hospital.forms import RegistrationForm
 
 # Import module models (i.e. User)
 from app.mod_hospital.models import Hospital
+from app.mod_user.models import User
+
+import math
 
 # Geo-code module
 from geopy.geocoders import Nominatim
@@ -22,11 +25,18 @@ from geopy.geocoders import Nominatim
 # Define the blueprint: 'auth', set its url prefix: app.url/auth
 mod_hospital = Blueprint('hospital', __name__, url_prefix='/hospital')
 
+# how many people contact
+n = 10
+
 # Set the route and accepted methods
 @mod_hospital.route('/manage/')
 def manage():
-	hospital = Hospital.query.filter_by(name="Red Crescent Hospital")
-	return render_template("hospital.html")
+	hosp = Hospital.query.filter_by(id=session['hospital_id']).first()
+	users = User.query.all()
+	for u in users:
+		u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
+	users = sorted(users, key=lambda x: x.distance)[:n]
+	return render_template("closest.html", users=users)
 
 @mod_hospital.route('/login/', methods=['GET', 'POST'])
 def login():
@@ -48,7 +58,7 @@ def login():
 
 			flash('Welcome %s' % hospital.name)
 			print hospital
-			return redirect("hospital/manage")
+			return redirect("/hospital/manage/")
 
 	flash('Wrong name or password', 'error-message')
 	print "wrong form"
@@ -70,7 +80,7 @@ def registration():
 	form = RegistrationForm(request.form)
 
 	# Verify the sign in form
-	print form
+	print "FORM:", form
 	print form.errors
 	if form.validate_on_submit():
 
@@ -96,17 +106,6 @@ def registration():
 	print form.errors
 	print "wrong form"
 	return render_template("hospital/registration.html", form=form)
-
-@mod_hospital.route('/closest/')
-def closest():
-    print "closest"
-    hosp = Hospital.query.filter_by(id=session['hospital_id']).first()
-    users = User.query.all()
-    for u in users:
-        u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
-    users = sorted(users, key=lambda x: x.distance)[:n]
-    return render_template("closest.html", users=users)
-
 
 def distance(lat1, lon1, lat2, lon2):
     lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
