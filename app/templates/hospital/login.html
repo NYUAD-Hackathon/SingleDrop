@@ -1,14 +1,55 @@
 {% extends "layout.html" %}
 {% block body %}
-  <h2>Login</h2>
-  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
-  <form action="{{ url_for('hospital.login') }}" method="post">
-    <dl>
-      <dt>Name:</dt>
-      <dd><input type="text" name="name"></dd>
-      <dt>Password:</dt>
-      <dd><input type="password" name="password"></dd>
-      <dd><input type="submit" value="Login"></dd>
-    </dl>
+<header>
+  <nav>
+    <a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='pictures/logo.png') }}" style="width:200px" alt="" /></a>
+    <ul>
+      <li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
+      <li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
+      {% if not session.get('logged_in') %}
+      <li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
+      <li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.login') }}">Login</a></li>
+      {% elif session.get('user_id') %}
+      <li class="menuItem"><a href="{{ url_for('user.profile') }}">Profile</a></li>
+      <li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
+      {% else %}
+      <li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
+      <li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
+      {% endif %}
+      <li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+{% if error %}
+<p class="error"><strong>Error:</strong>{{ error }}</p>
+{% endif %}
+
+<div class="home">
+  <p>Login</p>
+</div>
+
+<div class="form">
+  <form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('hospital.login') }}" method="post">
+
+    <div style="clear : both">
+      <p>
+        <label for="name" syle="margin-bottom:2px">Name</label></br>
+        <input id="name" name="name"  type="name" placeholder="Name">
+      </p>
+    </div>
+
+    <div style="clear : both">        
+      <p>
+        <label for="password">Password </label></br>
+        <input id="password" name="password" type="password"  placeholder="******">
+      </p>
+    </div>
+
+    <p>
+      <input type="submit" value="Login" name="S'inscrire" class="iscrit" style="float : right; margin-top : 100px">
+    </p>
+
   </form>
+</div>
 {% endblock %}
