@@ -30,8 +30,8 @@
 
 		<div style="clear : both; margin-top:10px">	
 			<p>
-				<label for="email">Date of last blood donation: </label></br>
-				<label> 25/02/2012</label>
+				<label for="last_donation">Date of last blood donation: </label></br>
+				<label>25/02/2012</label>
 			</p>
 		</div>
 
@@ -39,47 +39,70 @@
 			<hr>
 			<p>
 				<label for="email">Email : </label></br>
-				<label> meriem@esi.dz</label>
+				<label>{{ user.email }}</label>
 			</p>
 		</div>
 
 		<div style="clear : both">
 			<hr>
 			<p>
-				<label for="email">Name : </label></br>
-				<label> meriem</label>
+				<label for="name">Name : </label></br>
+				<label>{{ user.name }}</label>
 			</p>
 		</div>
 
 		<div style="clear : both">
 			<hr>
 			<p>
-				<label for="email">Blood Type : </label></br>
-				<label>B-</label>
+				<label for="blood_type">Blood Type : </label></br>
+				<label>{{ user.blood_type }}</label>
 			</p> 
 		</div>
 
 		<div style="clear : both">
 			<hr>
 			<p>
-				<label for="email">Phone Number : </label></br>
-				<label> +55555555555</label>
+				<label for="phone">Phone Number : </label></br>
+				<label>{{ user.phone }}</label></br>
+				<input id="phone" name="phone"  type="text" placeholder="+5555555555">
 			</p>
 			<hr>	 
 		</div>
 
 		<div style="clear : both; margin-top:10px">
 			<p>
-				<label for="email">Neighberhood: </label></br>
-				<label> xxxxx </label>
+				<label for="neighborhood">Neighborhood: </label></br>
+				<label>{{ user.neighborhood }}</label></br>
+				<select name="neighborhood">
+					<option value="Al Aman">Al Aman</option>
+					<option value="Al Bateen">Al Bateen</option>
+					<option value="Al Dhafrah">Al Dhafrah</option>
+					<option value="Al Falah">Al Falah</option>
+					<option value="Al Karama">Al Karama</option>
+					<option value="Al Khubeirah">Al Khubeirah</option>
+					<option value="Al Lulu Island">Al Lulu Island</option>
+					<option value="Al Madina">Al Madina</option>
+					<option value="Al Manaseer">Al Manaseer</option>
+					<option value="Al Manhal">Al Manhal</option>
+					<option value="Al Maqtaa">Al Maqtaa</option>
+					<option value="Al Markaziyah">Al Markaziyah</option>
+					<option value="Al Meena">Al Meena</option>
+					<option value="Al Moroor">Al Moroor</option>
+					<option value="Al Mushrif">Al Mushrif</option>
+					<option value="Al Muzoon">Al Muzoon</option>
+					<option value="Al Nahyan">Al Nahyan</option>
+				</select>
 			</p>
 			<hr>	 
 		</div>
 		
 		<div style="clear : both; margin-top:10px">
 			<p>
-				<label for="email">Emirate: </label></br>
-				<label> xxx</label>
+				<label for="city">City: </label></br>
+				<label>{{ user.city }}</label></br>
+				<select name="city">
+					<option value="Abu Dhabi">Abu Dhabi</option>
+				</select>
 			</p>
 			<hr>	 
 		</div>

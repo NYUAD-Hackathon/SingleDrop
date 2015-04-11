@@ -104,13 +104,6 @@ def registration():
 
 @mod_user.route('/profile/', methods=['GET'])
 def profile():
-    # session['user_id'] = 1
-    user = User.query.filter_by(id=session['user_id']).first()
-    # warning passwords
-    return render_template("user/edit.html", user=user)
-
-@mod_user.route('/edit/', methods=['GET', 'POST'])
-def edit():
     form = EditForm(request.form)
     user = User.query.filter_by(id=session['user_id']).first()
 
@@ -124,4 +117,4 @@ def edit():
         db.session.add(user)
         db.session.commit()
 
-    return render_template("user/edit.html", user=user, form=form)
+    return render_template("user/profile.html", user=user, form=form)
