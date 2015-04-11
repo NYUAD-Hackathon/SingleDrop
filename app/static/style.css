@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'CaviarDreams';
-    src: url('./Font/CaviarDreams.eot') format('eot'),
-    url('./Font/CaviarDreams.woff') format('woff'),
-    url('./Font/CaviarDreams.ttf') format('truetype'),
-    url('./Font/CaviarDreams.svg') format('svg');
+	font-family: 'CaviarDreams';
+	src: url('./Font/CaviarDreams.eot') format('eot'),
+	url('./Font/CaviarDreams.woff') format('woff'),
+	url('./Font/CaviarDreams.ttf') format('truetype'),
+	url('./Font/CaviarDreams.svg') format('svg');
 }
 
 body {
@@ -61,22 +61,22 @@ nav .menuItem{
 }
 
 nav .menuItem > a {
- text-decoration: none;
- color: black;
- display: inline-block;
- width: 118px;
- height: 30px;
- padding-top: 0.3em;
- text-align: center;
- border: none;
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+	width: 118px;
+	height: 30px;
+	padding-top: 0.3em;
+	text-align: center;
+	border: none;
 }
 
 nav .menuItem ul {
- display: none;
- position: absolute;
- background-color: black;
- list-style-type: none;
- padding: 0;
+	display: none;
+	position: absolute;
+	background-color: black;
+	list-style-type: none;
+	padding: 0;
 }
 
 nav .menuItem ul li a {
@@ -94,7 +94,7 @@ nav .menuItem a:hover {
 }
 
 nav .menuItem:hover ul {
- display: block;
+	display: block;
 }
 
 #signupForm label.error {
@@ -125,13 +125,13 @@ nav .menuItem:hover ul {
 }
 
 div.md > a {
- float:left;
- width: 95px;
- background-color:rgb(0,190,156) ;
- font-family: CaviarDreams;
- text-align: center;
- color: black;
- border:none;
+	float:left;
+	width: 95px;
+	background-color:rgb(0,190,156) ;
+	font-family: CaviarDreams;
+	text-align: center;
+	color: black;
+	border:none;
 }
 
 div.md > a:hover {
@@ -150,8 +150,8 @@ div.md ul li a {
 }
 
 div.md ul {
- margin-left: 113px;
- margin-top: 0px;
+	margin-left: 113px;
+	margin-top: 0px;
 }
 
 div.md ul li {
@@ -242,10 +242,10 @@ div.zone_telechargement img {
 }
 
 div.zone_telechargement a {
- text-decoration: none;
- color: black;
- border: none;
- font-size: 24px;
+	text-decoration: none;
+	color: black;
+	border: none;
+	font-size: 24px;
 }
 
 div.zone_telechargement a:hover {
@@ -261,9 +261,9 @@ div.zone_telechargement a:hover {
 }
 
 div.liens img {
- float: left;
- height: 64px;
- width: 53px;
+	float: left;
+	height: 64px;
+	width: 53px;
 }
 
 div.liens a {
@@ -324,10 +324,10 @@ div.form {
 }
 
 div.form input {
- width: 200px;
- height : 26px;
- font-family:'CaviarDreams', Sans-Serif;
- margin-top : 7px;
+	width: 200px;
+	height : 26px;
+	font-family:'CaviarDreams', Sans-Serif;
+	margin-top : 7px;
 }
 
 div.form input[type=radio] {
@@ -372,9 +372,9 @@ div.radio1 p {
 }
 
 div.radio1 input[type=radio][value="tp1"]:checked~p#p11 {
- display: block;
- position: relative;
- top: -8px;
+	display: block;
+	position: relative;
+	top: -8px;
 }
 
 div.radio1 input[type=radio][value="tp2"]:checked~p#p22 {
@@ -472,10 +472,10 @@ div.nouveau {
 }
 
 div.nouveau:hover {
- color:#ff2a00;
- width: 195px;
- height:95px;
- border: 2px solid #ff2a00;
+	color:#ff2a00;
+	width: 195px;
+	height:95px;
+	border: 2px solid #ff2a00;
 }
 
 .box {
@@ -508,11 +508,11 @@ div.Actu:nth-child(3) {
 }
 
 div.Actu img {
- float: left;
- height: 172px;
- width: 200px;
- margin: 12px;
- border: 2px solid #ffffff;
+	float: left;
+	height: 172px;
+	width: 200px;
+	margin: 12px;
+	border: 2px solid #ffffff;
 }
 
 div.Actu p {
@@ -725,11 +725,11 @@ div.home > p {
 }
 
 div.liens {
- float: left;
- margin-left: 40px;
- margin-top: 40px;
- height: 200px;
- width: 700px;
+	float: left;
+	margin-left: 40px;
+	margin-top: 40px;
+	height: 200px;
+	width: 700px;
 }
 
 div.liens ul {
@@ -827,8 +827,8 @@ footer ul:nth-child(1) {
 }
 
 footer ul:nth-child(1) li {
- display: block;
- list-style-image: url(../pictures/arrow487.png);
+	display: block;
+	list-style-image: url(../pictures/arrow487.png);
 }
 
 footer ul:nth-child(2) {
@@ -849,70 +849,70 @@ footer ul:nth-child(2) li a {
 }
 
 section.cont img {
-    width: 30px;
-    height: 30px;
-    margin-left: 20px;
+	width: 30px;
+	height: 30px;
+	margin-left: 20px;
 }
 section.cont a{
-    margin-right: 20px;
-    float: right;
-    color: black;
-    border: none;
-    font-size: 28px;
+	margin-right: 20px;
+	float: right;
+	color: black;
+	border: none;
+	font-size: 28px;
 }
 section.cont hr{
-    width: 100%;
-    float: left;
+	width: 100%;
+	float: left;
 }
 div.contenu section.cont article p{
-    margin-top: 50px;
-    margin-left: 218px;
-    float: left;
-    width: 60%;
-    font-size: 14px;
-    color:black ;
-    text-align: justify;
+	margin-top: 50px;
+	margin-left: 218px;
+	float: left;
+	width: 60%;
+	font-size: 14px;
+	color:black ;
+	text-align: justify;
 }
 div.do{
-    float: left;
+	float: left;
 }
 
 div.bas{
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 142px;
-    margin-top: -141px;
-    background-color: rgb(249,249,249);
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 142px;
+	margin-top: -141px;
+	background-color: rgb(249,249,249);
 }
 
 div.home{
-    border-bottom: 2px solid black;
-    margin-left:20%;
-    margin-right: 23%;
-    margin-top: 70px;
+	border-bottom: 2px solid black;
+	margin-left:20%;
+	margin-right: 23%;
+	margin-top: 70px;
 }
 
 div.home >p {
-    font-size: 37px;
-    margin-left: 12%;
-    position: relative;
-    top: 20px;
-    font-family: 'CaviarDreams', Sans-Serif;
-    font-style: bold;
+	font-size: 37px;
+	margin-left: 12%;
+	position: relative;
+	top: 20px;
+	font-family: 'CaviarDreams', Sans-Serif;
+	font-style: bold;
 }
 div.liens{
-   float: left;
-    margin-left: 40px;
-    margin-top: 40px;
-    height: 200px;
-    width: 700px;
+	float: left;
+	margin-left: 40px;
+	margin-top: 40px;
+	height: 200px;
+	width: 700px;
 }
 div.liens ul{
-    margin-left: 40px;
+	margin-left: 40px;
 }
 div.liens a{
-    border: none;
+	border: none;
 }
 
 footer ul:nth-child(1) li a {
