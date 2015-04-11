@@ -1,3 +1,9 @@
+import urllib
+import simplejson as json
+import requests
+
+from geopy.geocoders import Nominatim
+
 # Import flask dependencies
 from flask import Blueprint, request, render_template, \
                   flash, g, session, redirect, url_for
@@ -53,6 +59,8 @@ def logout():
 # Set the route and accepted methods
 @mod_auth.route('/registration/', methods=['GET', 'POST'])
 def registration():
+    geolocator = Nominatim()
+
     form = RegistrationForm(request.form)
 
     # Verify the sign in form
@@ -65,7 +73,13 @@ def registration():
         city = form.city.data
         neighborhood = form.neighborhood.data
 
-        user = User(name, email, password, phone, blood_type, city, neighborhood)
+        address = "Al Khubeirah" + ", " + "Abu Dhabi"
+        location = geolocator.geocode(address)
+
+        lat = location.latitude
+        lon = location.longitude
+
+        user = User(name, email, password, phone, blood_type, city, neighborhood, lat, lon)
 
         db.session.add(user)
         db.session.commit()

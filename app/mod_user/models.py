@@ -50,7 +50,7 @@ class User(Base):
         self.city         = city
         self.neighborhood = neighborhood
         self.lat          = lat
-        sefl.lon          = lon
+        self.lon          = lon
 
     def __repr__(self):
         return '<User %r>' % (self.name)
