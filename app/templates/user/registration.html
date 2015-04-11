@@ -1,47 +1,129 @@
 {% extends "layout.html" %}
 {% block body %}
-  <header>
-    <nav>
-      <a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='logo.png') }}" style="width:200px" alt="" /></a>
-      <ul>
-        <li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
-        <li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
-        {% if session.get('hospital_id') == None and session.get('user_id') == None %}
-          <li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.registration') }}">Register</a></li>
-          <li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
-        {% elif session.get('user_id') %}
-          <li class="menuItem"><a href="{{ url_for('user.profile') }}">Profile</a></li>
-          <li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
-        {% else %}
-          <li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
-          <li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
-        {% endif %}
-        <li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+	<nav>
+		<a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='logo.png') }}" style="width:200px" alt="" /></a>
+		<ul>
+			<li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
+			<li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
+			{% if session.get('hospital_id') == None and session.get('user_id') == None %}
+			<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.registration') }}">Register</a></li>
+			<li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
+			{% elif session.get('user_id') %}
+			<li class="menuItem"><a href="{{ url_for('user.profile') }}">Profile</a></li>
+			<li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
+			{% else %}
+			<li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
+			<li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
+			{% endif %}
+			<li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
+		</ul>
+	</nav>
+</header>
 
-  {% if error %}
-    <p class="error"><strong>Error:</strong>{{ error }}</p>
-  {% endif %}
+{% if error %}
+<p class="error"><strong>Error:</strong>{{ error }}</p>
+{% endif %}
 
-  <form action="{{ url_for('user.registration') }}" method="post">
-      <dl>
-        <dt>Name: </dt>
-        <dd><input type="text" name="name"> </dd>
-        <dt>Email: </dt>
-        <dd><input type="text" name="email"> </dd>
-        <dt>Password: </dt>
-        <dd><input type="password" name="password"> </dd>
-        <dt>Phone: </dt>
-        <dd><input type="text" name="phone"> </dd>
-        <dt>Blood type: </dt>
-        <dd><input type="text" name="blood_type"> </dd>
-        <dt>City: </dt>
-        <dd><input type="text" name="city"> </dd>
-        <dt>Neighborhood: </dt>
-        <dd><input type="text" name="neighborhood"> </dd>
-        <dd><input type="submit" value="Register"> </dd>
-      </dl>
-  </form>
-{% endblock %}
+<div class="home">
+	<p>Registration Form </p>
+</div>
+
+<div class="form">
+	<form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('user.registration') }}" method="post">
+
+		<div style="clear : both">
+			<p>
+				<label for="email" syle="margin-bottom:2px">Email</label></br>
+				<input id="email" name="email"  type="email" placeholder="user@email.com">
+			</p>
+		</div>
+
+		<div style="clear : both">        
+			<p>
+				<label for="password">Password </label></br>
+				<input id="password" name="password" type="password"  placeholder="******">
+				<label for="password">Confirm Password  </label></br>
+				<input id="password" name="password" type="password"  placeholder="******">
+			</p>
+		</div>
+
+		<div style="clear : both">
+			<p>
+				<label for="name" syle="margin-bottom:2px">Name</label></br>
+				<input id="name" name="name"  type="text" placeholder="Name">
+			</p> 
+		</div>
+
+		<div style="clear : both">
+			<hr style="margin-right:28%">
+			<p>
+				<label for="phone">Phone Number</label></br>
+				<input id="phone" name="phone"  type="text" placeholder="+5555555555">
+			</p>
+		</div>
+
+		<div style="clear : both">
+			<hr style="margin-right:28%">
+			<p>
+				<label for="blood_type">Blood Type/label></br>
+					<select name="blood_type">
+						<option value="16">A+</option>
+						<option value="16">A-</option>
+						<option value="16">B+</option>
+						<option value="16">B-</option>
+						<option value="16">B-</option>
+						<option value="16">AB+</option>
+						<option value="16">AB-</option>
+						<option value="16">O+</option>
+						<option value="16">O-</option>
+					</select>
+				</p>
+			</div>
+
+			<div style="clear : both">
+				<hr style="margin-right:28%">
+			</div>
+
+			<div style="clear : both">        
+				<div>
+					<p style="float : left" >
+						<label for="neighborhood">Neighborhood</label></br>
+						<select name="neighborhood">
+							<option value="Al Aman">Al Aman</option>
+							<option value="Al Bateen">Al Bateen</option>
+							<option value="Al Dhafrah">Al Dhafrah</option>
+							<option value="Al Falah">Al Falah</option>
+							<option value="Al Karama">Al Karama</option>
+							<option value="Al Khubeirah">Al Khubeirah</option>
+							<option value="Al Lulu Island">Al Lulu Island</option>
+							<option value="Al Madina">Al Madina</option>
+							<option value="Al Manaseer">Al Manaseer</option>
+							<option value="Al Manhal">Al Manhal</option>
+							<option value="Al Maqtaa">Al Maqtaa</option>
+							<option value="Al Markaziyah">Al Markaziyah</option>
+							<option value="Al Meena">Al Meena</option>
+							<option value="Al Moroor">Al Moroor</option>
+							<option value="Al Mushrif">Al Mushrif</option>
+							<option value="Al Muzoon">Al Muzoon</option>
+							<option value="Al Nahyan">Al Nahyan</option>
+						</select>
+					</p>
+
+					<p style="float : left; margin-left: 200px;" >
+						<label for="city">Emirate</label></br>
+						<select name="city">
+							<option value="Abu Dhabi">Abu Dhabi</option>
+						</select>
+					</p>
+
+				</div>
+			</div>
+		</div>
+
+		<p>
+			<input type="submit" value="Register" name="S'inscrire" class="iscrit" style="float : right; margin-top : 100px">
+		</p>
+
+	</form>
+</div>

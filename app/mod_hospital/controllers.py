@@ -93,9 +93,13 @@ def registration():
 
 		address = neighborhood + ", " + city
 		location = geolocator.geocode(address)
-
-		lat = location.latitude
-		lon = location.longitude
+		try:
+			lat = location.latitude
+			lon = location.longitude
+		except:
+			lat = 0
+			lon = 0
+			print "ERROR no location"
 
 		hospital = Hospital(name, password, city, neighborhood, lat, lon)
 

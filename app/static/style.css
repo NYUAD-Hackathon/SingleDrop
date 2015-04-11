@@ -1,9 +1,9 @@
 @font-face {
-	font-family: 'CaviarDreams';
-	src: url('./CaviarDreams.eot') format('eot'),
-	url('./CaviarDreams.woff') format('woff'),
-	url('./CaviarDreams.ttf') format('truetype'),
-	url('./CaviarDreams.svg') format('svg');
+    font-family: 'CaviarDreams';
+    src: url('./Font/CaviarDreams.eot') format('eot'),
+    url('./Font/CaviarDreams.woff') format('woff'),
+    url('./Font/CaviarDreams.ttf') format('truetype'),
+    url('./Font/CaviarDreams.svg') format('svg');
 }
 
 body {
@@ -740,6 +740,7 @@ div.liens a {
 	border: none;
 }
 
+<<<<<<< HEAD
 div.liens ul li ul li {
 	float: left;
 	display: none;
@@ -844,7 +845,74 @@ footer ul li {
 }
 
 footer ul:nth-child(2) li a {
- text-decoration: none;
+	text-decoration: none;
+}
+
+section.cont img {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+section.cont a{
+    margin-right: 20px;
+    float: right;
+    color: black;
+    border: none;
+    font-size: 28px;
+}
+section.cont hr{
+    width: 100%;
+    float: left;
+}
+div.contenu section.cont article p{
+    margin-top: 50px;
+    margin-left: 218px;
+    float: left;
+    width: 60%;
+    font-size: 14px;
+    color:black ;
+    text-align: justify;
+}
+div.do{
+    float: left;
+}
+
+div.bas{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 142px;
+    margin-top: -141px;
+    background-color: rgb(249,249,249);
+}
+
+div.home{
+    border-bottom: 2px solid black;
+    margin-left:20%;
+    margin-right: 23%;
+    margin-top: 70px;
+}
+
+div.home >p {
+    font-size: 37px;
+    margin-left: 12%;
+    position: relative;
+    top: 20px;
+    font-family: 'CaviarDreams', Sans-Serif;
+    font-style: bold;
+}
+div.liens{
+   float: left;
+    margin-left: 40px;
+    margin-top: 40px;
+    height: 200px;
+    width: 700px;
+}
+div.liens ul{
+    margin-left: 40px;
+}
+div.liens a{
+    border: none;
 }
 
 footer ul:nth-child(1) li a {

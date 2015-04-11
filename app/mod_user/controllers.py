@@ -76,10 +76,17 @@ def registration():
         neighborhood = form.neighborhood.data
 
         address = neighborhood + ", " + city
+        print address
         location = geolocator.geocode(address)
 
-        lat = location.latitude
-        lon = location.longitude
+        try:
+            lat = location.latitude
+            lon = location.longitude
+        except:
+            lat = 0
+            lon = 0
+            print "ERROR location"
+        print lat, lon
 
         user = User(name, email, password, phone, blood_type, city, neighborhood, lat, lon)
 
