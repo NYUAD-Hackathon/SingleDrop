@@ -102,7 +102,7 @@ def registration():
     print "wrong form"
     return render_template("user/registration.html", form=form)
 
-@mod_user.route('/profile/', methods=['GET'])
+@mod_user.route('/profile/', methods=['GET', 'POST'])
 def profile():
     form = EditForm(request.form)
     user = User.query.filter_by(id=session['user_id']).first()

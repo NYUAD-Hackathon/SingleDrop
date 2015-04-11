@@ -26,7 +26,7 @@
 </div>
 
 <div class="form">
-	<form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('user.registration') }}" method="post">
+	<form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('user.profile') }}" method="post">
 
 		<div style="clear : both; margin-top:10px">	
 			<p>
@@ -106,6 +106,10 @@
 			</p>
 			<hr>	 
 		</div>
+
+		<p>
+			<input type="submit" value="Submit Changes" name="S'inscrire" class="iscrit" style="float : right; margin-top : 100px">
+		</p>
 	</form>
 </div>
 {% endblock %}
