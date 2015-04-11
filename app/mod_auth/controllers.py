@@ -32,20 +32,23 @@ def login():
     form = LoginForm(request.form)
 
     # Verify the sign in form
+    print form
+    print form.errors
     if form.validate_on_submit():
 
         user = User.query.filter_by(email=form.email.data).first()
-
-        if user and check_password_hash(user.password, form.password.data):
+        print "PASSWORD:", form.password.data
+        print "USER PASS:", user.password
+        if user and user.password == form.password.data:
 
             session['user_id'] = user.id
 
             flash('Welcome %s' % user.name)
-
-            return redirect(url_for('user.profile'))
+            print user
+            return redirect("user")
 
         flash('Wrong email or password', 'error-message')
-
+    print "wrong form"
     return render_template("auth/login.html", form=form)
 
 @mod_auth.route('/logout/', methods=['GET', 'POST'])
@@ -64,7 +67,10 @@ def registration():
     form = RegistrationForm(request.form)
 
     # Verify the sign in form
+    print form
+    print form.errors
     if form.validate_on_submit():
+
         name = form.name.data
         email = form.email.data
         password = form.password.data
@@ -83,5 +89,10 @@ def registration():
 
         db.session.add(user)
         db.session.commit()
-        return render_template("registration.html", user=user, form=form)
+        print "user created"
+        print user
+
+        return redirect("login")
+    print form.errors
+    print "wrong form"
     return render_template("registration.html", form=form)

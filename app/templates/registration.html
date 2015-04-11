@@ -1,24 +1,24 @@
 {% extends "layout.html" %}
 {% block body %}
   <h2>Registration</h2>
-  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
-  <form action="localhost:5000/registration" method=post>
-    <dl>
-      <dt>Name: </dt>
-      <dd><input type=text name=name> </dd>
-      <dt>Email: </dt>
-      <dd><input type=text name=email> </dd>
-      <dt>Password: </dt>
-      <dd><input type=password name=password> </dd>
-      <dt>Phone: </dt>
-      <dd><input type=text name=phone> </dd>
-      <dt>Blood type: </dt>
-      <dd><input type=text name=blood_type> </dd>
-      <dt>City: </dt>
-      <dd><input type=text name=city> </dd>
-      <dt>Neighborhood: </dt>
-      <dd><input type=text name=neighborhood> </dd>
-      <dd><input type=submit value=Register> </dd>
-    </dl>
+  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
+  <form action="http://localhost:5000/registration/" method="post">
+      <dl>
+        <dt>Name: </dt>
+        <dd><input type="text" name="name"> </dd>
+        <dt>Email: </dt>
+        <dd><input type="text" name="email"> </dd>
+        <dt>Password: </dt>
+        <dd><input type="password" name="password"> </dd>
+        <dt>Phone: </dt>
+        <dd><input type="text" name="phone"> </dd>
+        <dt>Blood type: </dt>
+        <dd><input type="text" name="blood_type"> </dd>
+        <dt>City: </dt>
+        <dd><input type="text" name="city"> </dd>
+        <dt>Neighborhood: </dt>
+        <dd><input type="text" name="neighborhood"> </dd>
+        <dd><input type="submit" value="Register"> </dd>
+      </dl>
   </form>
 {% endblock %}
