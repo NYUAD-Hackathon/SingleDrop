@@ -4,7 +4,7 @@
 		<nav>
 			<a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='logo.png') }}" style="width:200px" alt="" /></a>
 			<ul>
-				<li class="menuItem" style="background-color: #D32F2F"  ><a href="{{ url_for('index.index') }}">Home</a></li>
+				<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('index.index') }}">Home</a></li>
 				<li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
 				{% if session.get('hospital_id') == None and session.get('user_id') == None %}
 					<li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
@@ -21,29 +21,31 @@
 		</nav>
 	</header>
 
-	<section id="slideshow">
-		<div class="container">
-			<div class="slider">
+	<div class="form">
+		<section id="slideshow">
+			<div class="container">
+				<div class="slider">
 
-				<figure>
-					<img src="{{ url_for('static', filename='4.png') }}" alt="" />
+					<figure>
+						<img src="{{ url_for('static', filename='4.png') }}" alt="" />
 
-				</figure><!--
-				--><figure>
-					<img src="{{ url_for('static', filename='2.png') }}" alt="" />
+					</figure><!--
+					--><figure>
+						<img src="{{ url_for('static', filename='2.png') }}" alt="" />
 
-				</figure><!--
-				--><figure>
-					<img src="{{ url_for('static', filename='3.png') }}" alt="" />
+					</figure><!--
+					--><figure>
+						<img src="{{ url_for('static', filename='3.png') }}" alt="" />
 
-				</figure><!--
-				--><figure>
-					<img src="{{ url_for('static', filename='1.png') }}" alt="" />
+					</figure><!--
+					--><figure>
+						<img src="{{ url_for('static', filename='1.png') }}" alt="" />
 
-				</figure>
-			</div>
-		</div>	
-	</section>
+					</figure>
+				</div>
+			</div>	
+		</section>
+	</div>
 
 	<div class="slider_cont">
 		<p>  </p>

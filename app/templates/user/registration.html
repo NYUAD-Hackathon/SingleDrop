@@ -1,7 +1,30 @@
 {% extends "layout.html" %}
 {% block body %}
-  <h2>Registration</h2>
-  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
+  <header>
+    <nav>
+      <a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='logo.png') }}" style="width:200px" alt="" /></a>
+      <ul>
+        <li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
+        <li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
+        {% if session.get('hospital_id') == None and session.get('user_id') == None %}
+          <li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.registration') }}">Register</a></li>
+          <li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
+        {% elif session.get('user_id') %}
+          <li class="menuItem"><a href="{{ url_for('user.profile') }}">Profile</a></li>
+          <li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
+        {% else %}
+          <li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
+          <li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
+        {% endif %}
+        <li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {% if error %}
+    <p class="error"><strong>Error:</strong>{{ error }}</p>
+  {% endif %}
+
   <form action="{{ url_for('user.registration') }}" method="post">
       <dl>
         <dt>Name: </dt>
