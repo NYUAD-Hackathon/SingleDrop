@@ -5,9 +5,9 @@
   <h1>SingleDrop</h1>
   <div class=metanav>
   {% if not session.logged_in %}
-    <a href="{{ url_for('app.mod_user.login') }}">user log in</a>
+    <a href="{{ url_for('user.login') }}">user log in</a>
   {% else %}
-    <a href="{{ url_for('app.mod_user.login') }}t">user log out</a>
+    <a href="{{ url_for('user.logout') }}t">user log out</a>
   {% endif %}
   </div>
   {% for message in get_flashed_messages() %}
