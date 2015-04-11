@@ -104,7 +104,7 @@ def registration():
 		print "hospital created"
 		print hospital
 
-		return redirect("hospital/manage")
+		return redirect("hospital/login")
 	print form.errors
 	print "wrong form"
 	return render_template("hospital/registration.html", form=form)
