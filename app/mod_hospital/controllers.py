@@ -22,26 +22,4 @@ mod_hospital = Blueprint('hospital', __name__, url_prefix='/hospital')
 def manage():
     hospital = Hospital.query.filter_by(name="Red Crescent Hospital")
 
-    return render_template(url_for('hospital.manage'))
-
-'''def signin():
-
-    # If sign in form is submitted
-    form = LoginForm(request.form)
-
-    # Verify the sign in form
-    if form.validate_on_submit():
-
-        user = User.query.filter_by(email=form.email.data).first()
-
-        if user and check_password_hash(user.password, form.password.data):
-
-            session['user_id'] = user.id
-
-            flash('Welcome %s' % user.name)
-
-            return redirect(url_for('auth.home'))
-
-        flash('Wrong email or password', 'error-message')
-
-    return render_template("auth/signin.html", form=form)'''
+    return render_template("hospital.manage.html")

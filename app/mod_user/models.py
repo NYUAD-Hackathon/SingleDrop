@@ -40,7 +40,7 @@ class User(Base):
     #status   = db.Column(db.SmallInteger, nullable=False)
 
     # New instance instantiation procedure
-    def __init__(self, name, email, password, phone, blood_type, city, neighborhood):
+    def __init__(self, name, email, password, phone, blood_type, city, neighborhood, lat, lon):
 
         self.name         = name
         self.email        = email
@@ -49,6 +49,8 @@ class User(Base):
         self.blood_type   = blood_type
         self.city         = city
         self.neighborhood = neighborhood
+        self.lat          = lat
+        sefl.lon          = lon
 
     def __repr__(self):
         return '<User %r>' % (self.name)
