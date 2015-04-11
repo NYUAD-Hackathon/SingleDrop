@@ -1,4 +1,88 @@
-<p> EDIT </p>
-{{ user.phone }}
-{{ user.city }}
-{{ user.neighborhood }}
+{% extends "layout.html" %}
+{% block body %}
+<header>
+	<nav>
+		<a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='pictures/logo.png') }}" style="width:200px" alt="" /></a>
+		<ul>
+			<li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
+			<li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
+			{% if not session.get('logged_in') %}
+			<li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
+			<li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
+			{% elif session.get('user_id') %}
+			<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.profile') }}">Profile</a></li>
+			<li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
+			{% else %}
+			<li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
+			<li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
+			{% endif %}
+			<li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div class="home">
+	<p>Profile</p>
+</div>
+
+<div class="form">
+	<form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('user.registration') }}" method="post">
+
+		<div style="clear : both; margin-top:10px">	
+			<p>
+				<label for="email">Date of last blood donation: </label></br>
+				<label> 25/02/2012</label>
+			</p>
+		</div>
+
+		<div style="clear : both">
+			<hr>
+			<p>
+				<label for="email">Email : </label></br>
+				<label> meriem@esi.dz</label>
+			</p>
+		</div>
+
+		<div style="clear : both">
+			<hr>
+			<p>
+				<label for="email">Name : </label></br>
+				<label> meriem</label>
+			</p>
+		</div>
+
+		<div style="clear : both">
+			<hr>
+			<p>
+				<label for="email">Blood Type : </label></br>
+				<label>B-</label>
+			</p> 
+		</div>
+
+		<div style="clear : both">
+			<hr>
+			<p>
+				<label for="email">Phone Number : </label></br>
+				<label> +55555555555</label>
+			</p>
+			<hr>	 
+		</div>
+
+		<div style="clear : both; margin-top:10px">
+			<p>
+				<label for="email">Neighberhood: </label></br>
+				<label> xxxxx </label>
+			</p>
+			<hr>	 
+		</div>
+		
+		<div style="clear : both; margin-top:10px">
+			<p>
+				<label for="email">Emirate: </label></br>
+				<label> xxx</label>
+			</p>
+			<hr>	 
+		</div>
+	</form>
+</div>
+{% endblock %}
