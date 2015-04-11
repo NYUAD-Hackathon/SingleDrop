@@ -36,13 +36,13 @@ class Hospital(Base):
 
     # New instance instantiation procedure
     #def __init__(self, name, email, password):
-    def __init__(self, name, password, city, neighbourhood, lat, lon):
+    def __init__(self, name, password, city, neighborhood, lat, lon):
 
         self.name     = name
         #self.email    = email
         self.password = password
         self.city = city
-        self.neighbourhood = neighbourhood
+        self.neighborhood = neighborhood
         self.lat = lat
         self.lon = lon
 

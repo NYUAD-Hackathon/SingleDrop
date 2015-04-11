@@ -37,7 +37,7 @@ def manage():
 		for u in users:
 			u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
 		users = sorted(users, key=lambda x: x.distance)[:n]
-		return render_template("hospital/closest.html", users=users)
+		return render_template("hospital/manage.html", users=users)
 	return render_template('403.html')
 
 @mod_hospital.route('/login/', methods=['GET', 'POST'])
