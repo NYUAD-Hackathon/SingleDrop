@@ -72,7 +72,7 @@ def logout():
 	session.pop('logged_in', None)
 	flash('You were logged out')
 
-	return redirect(url_for('index'))
+	return redirect("/")
 
 # Set the route and accepted methods
 @mod_hospital.route('/registration/', methods=['GET', 'POST'])

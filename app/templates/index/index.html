@@ -5,8 +5,8 @@
 			<a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='logo.png') }}" style="width:200px" alt="" /></a>
 			<ul>
 				<li class="menuItem" style="background-color: #D32F2F"  ><a href="{{ url_for('index.index') }}">Home</a></li>
-				<li class="menuItem"><a href="aboutus.html">About Us</a></li>
-				{% if not (session.get('hospital_id') or session.get('user_id')) %}
+				<li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
+				{% if session.get('hospital_id') == None and session.get('user_id') == None %}
 					<li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
 					<li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
 				{% elif session.get('user_id') %}
@@ -16,7 +16,7 @@
 					<li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
 					<li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
 				{% endif %}
-				<li class="menuItem"><a href="contacts.html">Contact Us</a></li>
+				<li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -24,30 +24,29 @@
 	<section id="slideshow">
 		<div class="container">
 			<div class="slider">
-			
+
 				<figure>
 					<img src="{{ url_for('static', filename='4.png') }}" alt="" />
+
 				</figure><!--
-				
 				--><figure>
 					<img src="{{ url_for('static', filename='2.png') }}" alt="" />
-				</figure><!--
 
+				</figure><!--
 				--><figure>
 					<img src="{{ url_for('static', filename='3.png') }}" alt="" />
-				</figure><!--
 
+				</figure><!--
 				--><figure>
 					<img src="{{ url_for('static', filename='1.png') }}" alt="" />
-				</figure>
 
+				</figure>
 			</div>
 		</div>	
 	</section>
-	</div>
 
 	<div class="slider_cont">
-		<p></p>
+		<p>  </p>
 	</div>
 {% endblock %}
 

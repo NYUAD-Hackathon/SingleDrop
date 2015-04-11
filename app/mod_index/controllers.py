@@ -9,9 +9,17 @@ from werkzeug import check_password_hash, generate_password_hash
 from app import db
 
 # Define the blueprint: 'auth', set its url prefix: app.url/auth
-mod_index = Blueprint('index', __name__, url_prefix='/')
+mod_index = Blueprint('index', __name__, url_prefix='')
 
 # Set the route and accepted methods
 @mod_index.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index/index.html")
+
+@mod_index.route('/about')
+def about():
+	return render_template("index/about.html")
+
+@mod_index.route('/contacts')
+def contacts():
+	return render_template("index/contacts.html")
