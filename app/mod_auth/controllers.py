@@ -1,7 +1,3 @@
-import urllib
-import simplejson as json
-import requests
-
 from geopy.geocoders import Nominatim
 
 # Import flask dependencies
