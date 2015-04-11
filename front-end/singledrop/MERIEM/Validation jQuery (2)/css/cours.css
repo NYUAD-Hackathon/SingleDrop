@@ -1,0 +1,53 @@
+.row {
+	width : 1080px;
+	margin : 10px auto;
+}
+.row > div {
+	float : right;
+	margin : 0 10px 10px 10px;
+}
+
+.w-1 { width : 70px; }
+.w-2 { width : 150px; }
+.w-3 { width : 230px; }
+.w-4 { width : 310px; }
+.w-5 { width : 390px; }
+.w-6 { width : 470px; }
+.w-7 { width : 550px; }
+.w-8 { width : 630px; }
+.w-9 { width : 710px; }
+.w-10 { width : 790px; }
+.w-11 { width : 870px; }
+.w-12 { width : 950px; }
+
+.clear { clear : both ; }
+
+.row h2 {
+
+background-color: grey; 
+padding-top : 3%;
+padding-bottom : 3%;
+}
+
+h2 > a {
+color : white;
+text-decoration : none;
+
+}
+
+.w-4{
+border-width: 1px;
+border-color: white;
+border-style: solid;
+background-color : white;
+}
+
+.row  ul{
+	margin: 0px;
+	list-style-type: none;
+	font-family : Lucidatypewriter, monospace;		
+}
+
+a {
+text-decoration: none;
+}

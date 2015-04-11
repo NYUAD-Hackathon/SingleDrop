@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Inscription</title>
+	
+	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	
+	<script src="lib/jquery.js"></script>
+	<script src="dist/jquery.validate.js"></script>
+	
+
+	<style>
+	#signupForm label.error {
+		margin-left: 10px;
+		width: auto;
+		display: block;
+		color : red;
+	#signupForm label {
+	margin-top : 5px;
+	}
+	}	
+	</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="home.html"><img src="pictures/logo1.png" style="width:200px" alt="" /></a>
+        <ul>
+            <li class="menuItem" ><a href="Home.html">Home</a></li>
+            <li class="menuItem"><a href="aboutus.html">About Us</a></li>
+            <li class="menuItem" style="background-color: #D32F2F"><a href="register.html">Register</a></li>
+			  <li class="menuItem"  ><a href="login.html">Login</a></li>
+            <li class="menuItem"  ><a href="contacts.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<div class="home">
+    <p>Registration Form </p>
+</div>
+<div class="form">
+	<form class="cmxform" id="signupForm" method="get" style="margin-left:7%" action="">		
+			<div style="clear : both">
+			<p>
+				<label for="email" syle="margin-bottom:2px">Email</label></br>
+				<input id="email" name="email"  type=email placeholder="user@email.com"> 
+			</div>
+			<div style="clear : both">  			
+			<div>
+			<p >
+				<label for="password">Password </label></br>
+				<input id="password" name="password" type=password  placeholder="******">
+			</p>
+			<p>
+				<label for="password">Confirm Password  </label></br>
+				<input id="password" name="password" type=password  placeholder="******">
+			</p>
+			</div>
+			</div>
+			<div style="clear : both">  	
+			<hr style="margin-right:28%">		
+			<div>
+			<p style="float : left" >
+				<label for="firstname">First Name </label></br>
+				<input id="firstname" name="firstname" type="text"  placeholder="Name">
+			</p>
+			<p style="float : left; margin-left: 200px;" >
+				<label for="lastname">Last Name  </label></br>
+				<input id="lastname" name="lastname" type="text"  placeholder="Prenom">
+			</p>
+			</div>
+			</div>
+				<div style="clear : both">
+			<hr style="margin-right:28%">
+			<p>
+				<label for="tel">Phone Number</label></br>
+				<input id="tel" name="tel"  type=number placeholder="+5555555555">
+			</p>
+				</div>
+				<div style="clear : both">
+			<hr style="margin-right:28%">
+			<p>
+				<label for="tel">Blood Type/label></br>
+				<select name="wilaya">
+	<option value="16">A+</option>
+	<option value="16">A-</option>
+	<option value="16">B+</option>
+	<option value="16">B-</option>
+	<option value="16">B-</option>
+		<option value="16">AB+</option>
+		<option value="16">AB-</option>
+			<option value="16">O+</option>
+			<option value="16">O-</option>
+			</select>
+			</p>
+				</div>
+					<div style="clear : both">
+			<hr style="margin-right:28%">
+				</div>			
+			<div style="clear : both">  			
+			<div>
+			<p style="float : left" >
+				<label for="adresse">Neighborhood</label></br>
+								
+				<select name="wilaya">
+	<option value="16">Al Aman</option>
+	<option value="16">Al Bateen</option>
+	<option value="16">Al Dhafrah</option>
+	<option value="16">Al Falah</option>
+	<option value="16">Al Karama</option>
+	<option value="16">Al Khubeirah</option>
+	<option value="16">Al Lulu Island</option>
+	<option value="16">Al Madina</option>
+	<option value="16">Al Manaseer</option>
+	<option value="16">Al Manhal</option>
+	<option value="16">Al Maqtaa</option>
+	<option value="16">Al Markaziyah</option>
+	<option value="16">Al Meena</option>
+	<option value="16">Al Moroor</option>
+	<option value="16">Al Mushrif</option>
+	<option value="16">Al Muzoon</option>
+	<option value="16">Al Nahyan</option>
+				</select>
+			</p>
+			<p style="float : left; margin-left: 200px;" >
+				<label for="lastname">Emirate</label></br>
+				<select name="wilaya">
+	<option value="16">Abu Dhabi</option>
+	</select>
+			</p>
+			</div>
+			</div>
+			</div>
+		<p>
+				<input type="submit" value="Register" name="S'inscrire" class="iscrit" style="float : right; margin-top : 100px">
+			</p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Inscription</title>
+	
+	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	
+	<script src="lib/jquery.js"></script>
+	<script src="dist/jquery.validate.js"></script>
+	
+	<style>
+	
+	#signupForm label.error {
+		margin-left: 10px;
+		width: auto;
+		display: block;
+		color : red;
+		
+	#signupForm label {
+	margin-top : 5px;
+	}
+	}
+	</style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="home.html"><img src="pictures/logo1.png" style="width:200px" alt="" /></a>
+        <ul>
+            <li class="menuItem" ><a href="Home.html">Home</a></li>
+            <li class="menuItem"><a href="aboutus.html">About Us</a></li>
+               <li class="menuItem"><a href="register.html">Register</a></li>
+            <li class="menuItem" style="background-color: #D32F2F"><a href="login.html">Login</a></li>
+            <li class="menuItem"  ><a href="contacts.html">Contact Us</a></li>
+        </ul>
+    </nav>	
+</header>
+
+<div class="home">
+    <p>Login </p>
+</div>
+
+<div class="form">
+	<form class="cmxform" id="signupForm" method="get" action="" style="margin-left:7%">
+			<div style="clear : both">
+			<p>
+				<label for="email">Email</label></br>
+				<input id="email" name="email"  type=email placeholder="user@email.com">
+			</p>
+			</div>
+			<div style="clear : both">  			
+			<div>
+			<p style="float : left" >
+				<label for="password">Password </label></br>
+				<input id="password" name="password" type=password  placeholder="******">
+			</p>
+			</div>
+			</div>
+			<div style="clear : both">
+			<p>
+				<label for="tel">User Type</label></br>
+				<select name="wilaya">
+	<option value="16">Donor</option>
+	<option value="16">Blood Bank</option>
+			</select>
+			</p>
+				</div>
+					<div style="clear : both">
+				</div>
+			</div>
+		<p>
+				<input type="submit" value="Login" name="S'inscrire" class="iscrit" style="float : right; margin-top : 100px">
+			</p>
+	</form>
+	</div>
+</div>
+</body>
+<footer>
+    <ul>
+        <li>
+            <img src="pictures/email6.png" >
+            <b>Contact</b>
+            </br> Entreprise@gmail.com</p></li>
+        <li>
+            <img src="pictures/telephone37.png">
+            <b>Téléphone</b>
+            </br>+213562384</li>
+        <li>
+            <img src="pictures/share12.png">
+            <b>Social</b>
+            </br>facebook/entreprise
+        </li>
+        <li>
+
+            <img src="pictures/c.png">
+            <b>Creation</b>
+            </br>
+            All copyrights reserved</li>
+    </ul>
+</footer>
+</html>
