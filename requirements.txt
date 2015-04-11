@@ -9,3 +9,4 @@ SQLAlchemy==0.9.9
 Werkzeug==0.10.4
 WTForms==2.0.2
 psycopg2==2.5.3
+simplejson==3.6.5
