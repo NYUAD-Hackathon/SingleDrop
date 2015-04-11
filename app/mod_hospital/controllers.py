@@ -31,12 +31,14 @@ n = 10
 # Set the route and accepted methods
 @mod_hospital.route('/manage/')
 def manage():
-	hosp = Hospital.query.filter_by(id=session['hospital_id']).first()
-	users = User.query.all()
-	for u in users:
-		u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
-	users = sorted(users, key=lambda x: x.distance)[:n]
-	return render_template("hospital/closest.html", users=users)
+	if (session.get('hospital_id')):
+		hosp = Hospital.query.filter_by(id=session['hospital_id']).first()
+		users = User.query.all()
+		for u in users:
+			u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
+		users = sorted(users, key=lambda x: x.distance)[:n]
+		return render_template("hospital/closest.html", users=users)
+	return render_template('403.html')
 
 @mod_hospital.route('/login/', methods=['GET', 'POST'])
 def login():
