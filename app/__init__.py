@@ -23,16 +23,11 @@ def not_found(error):
 from app.mod_auth.controllers import mod_auth as auth_module
 from app.mod_hospital.controllers import mod_hospital as hospital_module
 from app.mod_user.controllers import mod_user as user_module
-# MODULES HERE!!!
 
 # Register blueprint(s)
 app.register_blueprint(auth_module)
 app.register_blueprint(hospital_module)
 app.register_blueprint(user_module)
-# BLUEPRINTS HERE!!!
-
-# app.register_blueprint(xyz_module)
-# ..
 
 # Build the database:
 # This will create the database file using SQLAlchemy

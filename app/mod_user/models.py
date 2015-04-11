@@ -32,6 +32,9 @@ class User(Base):
     city = db.Column(db.String(128),  nullable=False)
     neighborhood = db.Column(db.String(128),  nullable=False)
 
+    lat = db.Column(db.Float,  nullable=False)
+    lon = db.Column(db.Float,  nullable=False)
+
     # Authorisation Data: role & status
     #role     = db.Column(db.SmallInteger, nullable=False)
     #status   = db.Column(db.SmallInteger, nullable=False)
