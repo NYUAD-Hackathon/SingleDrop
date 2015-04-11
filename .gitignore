@@ -1,6 +1,8 @@
 # ADDED
 .DS_Store
 venv/
+ven/
+virtual/
 Include
 Lib
 Scripts
