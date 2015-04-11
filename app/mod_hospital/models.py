@@ -18,7 +18,8 @@ class Hospital(Base):
     __tablename__ = 'hospital'
 
     # User Name
-    name    = db.Column(db.String(128),  nullable=False)
+    name    = db.Column(db.String(128),  nullable=False,
+                                         unique = True)
 
     # Identification Data: email & password
     #email    = db.Column(db.String(128),  nullable=False,
@@ -32,17 +33,18 @@ class Hospital(Base):
     lat = db.Column(db.Float, nullable=False)
     lon = db.Column(db.Float, nullable=False)
 
-    # Authorisation Data: role & status
-    #role     = db.Column(db.SmallInteger, nullable=False)
-    #status   = db.Column(db.SmallInteger, nullable=False)
 
     # New instance instantiation procedure
     #def __init__(self, name, email, password):
-    def __init__(self, name, password):
+    def __init__(self, name, password, city, neighbourhood, lat, lon):
 
         self.name     = name
         #self.email    = email
         self.password = password
+        self.city = city
+        self.neighbourhood = neighbourhood
+        self.lat = lat
+        self.lon = lon
 
     def __repr__(self):
         return '<User %r>' % (self.name)
