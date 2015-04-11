@@ -57,17 +57,17 @@ a:focus {
 
 
 figure > img {
-width: 1080px;
-height : 310px;
+width: 800px;
+height : 450px;
 }
 
 #slideshow {
 	position: relative;
-	width: 1080px;
-	height: 310px;	
+	width: 800px;
+	height: 450px;	
 	margin: 0 auto 2em;
 	float : center;
-    margin-top: 75px;
+    margin-top: 70px;
 }
 
 /* avanced box-shadow : http://www.creativejuiz.fr/blog/les-tutoriels/ombre-avancees-avec-css3-et-box-shadow */
@@ -161,7 +161,7 @@ height : 310px;
 	transition: opacity 0.7s, bottom 0.7s;
 }
 #slideshow .commands:hover:before {
-	bottom: 35px;
+	bottom: 20px;
 	opacity: 1;
 }
 #slideshow .commands:hover:after {
@@ -262,8 +262,8 @@ height : 310px;
 
 #slideshow .container {
 	position:relative;
-	width: 1080px;
-	height: 310px;
+	width: 800px;
+	height: 450px;
 	overflow: hidden;
 }
 /* timeline base */
@@ -298,8 +298,8 @@ height : 310px;
 #slideshow .slider {
 	position: absolute;
 	left:0; top:0;
-	width: 400%;
-	height: 310px;
+	width: 800%;
+	height: 450px;
 	
 	-webkit-animation: slider 10s infinite;
 	-moz-animation: slider 10s infinite;
@@ -318,8 +318,8 @@ height : 310px;
 #slideshow .c_slider {
 	position: absolute;
 	left:0; top:0;
-	width: 400%;
-	height: 310px;
+	width: 800%;
+	height: 450px;
 	background: url(img/dummy-640x310-1.jpg) 0 0 no-repeat, url(img/dummy-640x310-2.jpg) 640px 0 no-repeat, url(img/dummy-640x310-3.jpg) 1280px 0 no-repeat, url(img/dummy-640x310-4.jpg) 1920px 0 no-repeat;
 }
 .sl_i:target ~ #slideshow .c_slider {

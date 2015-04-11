@@ -1,18 +1,105 @@
-{% extends "layout.html" %}
-{% block body %}
-  <h2>Registration</h2>
-  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}</p>{% endif %}
-  <form action="{{ url_for('hospital.registration') }}" method="post">
-      <dl>
-        <dt>Name: </dt>
-        <dd><input type="text" name="name"> </dd>
-        <dt>Password: </dt>
-        <dd><input type="password" name="password"> </dd>
-        <dt>City: </dt>
-        <dd><input type="text" name="city"> </dd>
-        <dt>Neighborhood: </dt>
-        <dd><input type="text" name="neighborhood"> </dd>
-        <dd><input type="submit" value="Register"> </dd>
-      </dl>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inscription</title>
+  
+  <link type="text/css" href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+  
+  <script src="lib/jquery.js"></script>
+  <script src="dist/jquery.validate.js"></script>
+  
+
+  <style>
+  #signupForm label.error {
+    margin-left: 10px;
+    width: auto;
+    display: block;
+    color : red;
+  #signupForm label {
+  margin-top : 5px;
+  }
+  } 
+  </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="home.html"><img src="{{ url_for('static', filename='pictures/logo.png') }}" style="width:200px" alt="" /></a>
+        <ul>
+            <li class="menuItem" ><a href="Home.html">Home</a></li>
+            <li class="menuItem"><a href="aboutus.html">About Us</a></li>
+            <li class="menuItem" style="background-color: #D32F2F"><a href="register.html">Register</a></li>
+        <li class="menuItem"  ><a href="login.html">Login</a></li>
+            <li class="menuItem"  ><a href="contacts.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<div class="home">
+    <p>Registration Form </p>
+</div>
+<div class="form">
+  <form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('hospital.registration') }}" method="post">   
+      <div style="clear : both">
+      <p>
+        <label for="name" syle="margin-bottom:2px">Name</label></br>
+        <input id="name" name="name"  type="text" placeholder="Name"> 
+      </div>
+      <div style="clear : both">        
+      <div>
+      <p >
+        <label for="password">Password </label></br>
+        <input id="password" name="password" type="password"  placeholder="******">
+      </p>
+      <p>
+        <label for="password">Confirm Password  </label></br>
+        <input id="password" name="password" type="password"  placeholder="******">
+      </p>
+      </div>
+      </div>
+          <div style="clear : both">
+      <hr style="margin-right:28%">
+        </div>      
+      <div style="clear : both">        
+      <div>
+      <p style="float : left" >
+        <label for="neighborhood">Neighborhood</label></br>
+                
+        <select name="neighborhood">
+  <option value="Al Aman">Al Aman</option>
+  <option value="Al Bateen">Al Bateen</option>
+  <option value="Al Dhafrah">Al Dhafrah</option>
+  <option value="Al Falah">Al Falah</option>
+  <option value="Al Karama">Al Karama</option>
+  <option value="Al Khubeirah">Al Khubeirah</option>
+  <option value="Al Lulu Island">Al Lulu Island</option>
+  <option value="Al Madina">Al Madina</option>
+  <option value="Al Manaseer">Al Manaseer</option>
+  <option value="Al Manhal">Al Manhal</option>
+  <option value="Al Maqtaa">Al Maqtaa</option>
+  <option value="Al Markaziyah">Al Markaziyah</option>
+  <option value="Al Meena">Al Meena</option>
+  <option value="Al Moroor">Al Moroor</option>
+  <option value="Al Mushrif">Al Mushrif</option>
+  <option value="Al Muzoon">Al Muzoon</option>
+  <option value="Al Nahyan">Al Nahyan</option>
+        </select>
+      </p>
+      <p style="float : left; margin-left: 200px;" >
+        <label for="city">Emirate</label></br>
+        <select name="city">
+  <option value="Abu Dhabi">Abu Dhabi</option>
+  </select>
+      </p>
+      </div>
+      </div>
+      </div>
+    <p>
+        <input type="submit" value="Register" name="S'inscrire" class="iscrit" style="float : right; margin-top : 100px">
+      </p>
   </form>
-{% endblock %}
+</body>
+</html>
