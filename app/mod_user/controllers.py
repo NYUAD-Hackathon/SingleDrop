@@ -34,8 +34,6 @@ def login():
     if form.validate_on_submit():
 
         user = User.query.filter_by(email=form.email.data).first()
-        print "PASSWORD:", form.password.data
-        print "USER PASS:", user.password
         if user and user.password == form.password.data:
 
             session['logged_in'] = True;
