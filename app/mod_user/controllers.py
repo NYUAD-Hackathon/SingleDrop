@@ -45,7 +45,8 @@ def login():
             print user
             return redirect(url_for('user.profile'))
 
-        flash('Wrong email or password', 'error-message')
+        else:
+            flash('Wrong email or password', 'error-message')
     print "wrong form"
     return render_template("user/login.html", form=form)
 
