@@ -112,7 +112,7 @@
 					</td>
 					<td width="100px">
 						<p>
-							<label onclick="make_call();"><div class="contact">Call</div></label>
+							<button type="submit" onclick="make_call({{u.phone}});"><div class="contact">Call</div></button>
 						</p>
 					</td>
 				</tr>
@@ -142,8 +142,18 @@ var send_message = function(phone_number){
 		}
 	});
 };
-var make_call = function(){
-	window.alert('Not supported yet!');
-}
+var make_call = function(phone_number){
+	$.ajax({
+		url: "/api/call/" + phone_number,
+		type: "get",
+		dataType: 'json',
+		success: function(data){
+			window.alert('Calling');
+		},
+		error: function(jqXHR){
+			window.alert('Could not call!');
+		}
+	});
+};
 </script>
 {% endblock %}
