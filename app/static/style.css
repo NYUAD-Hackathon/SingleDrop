@@ -303,10 +303,10 @@ textarea {
 input[type=submit].cont {
 	margin-bottom: 8px;
 }
-
 table {
-	border-spacing: 7px;
-	margin-left: 60px;
+	border-spacing: 7px;	
+	border-color: 1px;
+	border-color: red;
 }
 
 th {

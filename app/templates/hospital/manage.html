@@ -23,9 +23,7 @@
 
 <div class="form">
 	<h1>Find Donors</h1>
-
   <form class="cmxform" id="searchForm" action="{{ url_for('hospital.manage') }}" method="post">
-
     <div style="clear : both">
         <p>
             <label for="blood">Blood Type</label></br>
@@ -50,35 +48,34 @@
     </div>
   </form>
 </div>
-
 {% if not users %}
 <p>No donors matching criteria found!</p>
 {% else %}
 <div class="form">
-	<table>
+	<table style="border-color:black">
 		<thead>
 			<tr>
-				<th width="100px">
+				<th width="7%">
 					<p>
 						<label for="name">Name: </label></br>
 					</p>
 				</th>
-                <th width="100px">
+                <th width="7%">
                     <p>
                         <label for="blood_type">Blood Type: </label></br>
                     </p>
                 </th>
-				<th width="100px">
+				<th width="7%">
 					<p>
 						<label for="neighborhood">Neighborhood: </label></br>
 					</p>
 				</th>
-                <th width="100px">
+                <th width="7%">
                     <p>
                         <label for="city">City: </label></br>
                     </p>
                 </th>
-				<th width="100px" colspan=2>
+				<th width="7%" colspan=2>
 					<p>
 						<label for="phone">Phone: </label></br>
 					</p>
@@ -126,9 +123,15 @@
 			</tr>
 			{% endfor %}
 		</tbody>
-	</table>
-    <button type="submit" class="btn btn-default">Message all</button>
-    <button type="submit" class="btn btn-default">Call all</button>
+		</table>
+		<div class="formitem">
+        <p>
+          <input type="submit" value="Message" name="S'inscrire" class="iscrit"/>
+          <input type="submit" value= "Call" name="S' inscrire" class="iscrit"/>
+        </p>
+    </div>
+	
+    
 
 </div>
 {% endif %}

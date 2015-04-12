@@ -8,19 +8,6 @@
   
   <script src="lib/jquery.js"></script>
   <script src="dist/jquery.validate.js"></script>
-  
-
-  <style>
-  #signupForm label.error {
-    margin-left: 10px;
-    width: auto;
-    display: block;
-    color : red;
-  #signupForm label {
-  margin-top : 5px;
-  }
-  } 
-  </style>
 </head>
 <body>
 
@@ -38,11 +25,9 @@
 </header>
 
 
-<div class="home">
-    <p>Registration Form </p>
-</div>
 <div class="form">
-  <form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('hospital.registration') }}" method="post">   
+  <h1>Registration Form </h1>
+  <form class="cmxform" id="signupForm" action="{{ url_for('hospital.registration') }}" method="post">   
       <div style="clear : both">
       <p>
         <label for="name" syle="margin-bottom:2px">Name</label></br>
@@ -97,9 +82,9 @@
       </div>
       </div>
       </div>
-      <div style="clear:both">
+     <div class="formitem">
         <p>
-          <input type="submit" value="Register" name="S'inscrire" class="iscrit" style="float:right; margin-right:25%; margin-top:4%">
+          <input type="submit" value="Register" name="S'inscrire" class="iscrit" style="float:right; margin-right:30%; margin-top:5%">
         </p>
     </div>
   </div>

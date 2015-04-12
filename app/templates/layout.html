@@ -11,7 +11,7 @@
 <body>
 
 {% for message in get_flashed_messages() %}
-	<div class="flash" style="float: right;">{{ message }}</div>
+	<div class="flash" style="float: right; margin-right:3%; margin-top:3%; font-weight:900;">{{ message }}</div>
 {% endfor %}
 
 {% block body %}{% endblock %}
