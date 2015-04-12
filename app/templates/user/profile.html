@@ -10,7 +10,7 @@
 			<li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
 			<li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
 			{% elif session.get('user_id') %}
-			<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.profile') }}">Profile</a></li>
+			<li class="menuItem active"><a href="{{ url_for('user.profile') }}">Profile</a></li>
 			<li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
 			{% else %}
 			<li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>

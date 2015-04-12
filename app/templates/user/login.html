@@ -8,7 +8,7 @@
       <li class="menuItem"><a href="{{ url_for('index.about') }}">About Us</a></li>
       {% if not session.get('logged_in') %}
       <li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
-      <li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('user.login') }}">Login</a></li>
+      <li class="menuItem active"><a href="{{ url_for('user.login') }}">Login</a></li>
       {% elif session.get('user_id') %}
       <li class="menuItem"><a href="{{ url_for('user.profile') }}">Profile</a></li>
       <li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
@@ -25,29 +25,26 @@
 <p class="error"><strong>Error:</strong>{{ error }}</p>
 {% endif %}
 
-<div class="home">
-  <p>Login</p>
-</div>
-
 <div class="form">
-  <form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('user.login') }}" method="post">
+  <h1>Login</h1>
+  <form class="cmxform" id="signupForm" action="{{ url_for('user.login') }}" method="post">
 
-    <div style="clear : both">
+    <div class="formitem">
       <p>
         <label for="email" syle="margin-bottom:2px">Email</label></br>
         <input id="email" name="email"  type="email" placeholder="user@email.com">
       </p>
     </div>
 
-    <div style="clear : both">        
+    <div class="formitem">        
       <p>
         <label for="password">Password </label></br>
         <input id="password" name="password" type="password"  placeholder="******">
       </p>
     </div>
-    <div style="clear:both">
+    <div class="formitem">
         <p>
-          <input type="submit" value="Login" name="S'inscrire" class="iscrit" style="float:right; margin-right:30%; margin-top:1%">
+          <input type="submit" value="Login" name="S'inscrire" class="iscrit"/>
         </p>
     </div>
   </div>

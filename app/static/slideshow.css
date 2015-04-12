@@ -20,43 +20,43 @@
 */
 
 
-h1, h2 {
+#slideshow  h1, h2 {
 	text-align:center;
 	margin-top:0;
 }
-h1 {
+#slideshow  h1 {
 	padding: 1em 0;
 	margin-left: 1.5em;
 	font-size: 2.5em;
 	font-family: 'Amaranth', Arial, Verdana, sans-serif;
 }
-h1 span {
+#slideshow  h1 span {
 	display:block;
 	margin: 0.75em 0 0 -2em;
 	line-height: 1em;
 	font-size: 0.55em;
 }
-h1 .cursive {
+#slideshow  h1 .cursive {
 	margin: 0 0 0 -3em;
 	font-size: 1.1em;
 	line-height:0.5em;
 	color: #bd9b83;
 }
-figure { 
+#slideshow  figure { 
 	display: inline-block; 
 }
-a {
+#slideshow  a {
 	text-decoration: none;
 	border-bottom: 1px solid #bc9d88;
 	color: #8f6b51;
 }
-a:hover,
-a:focus {
+#slideshow  a:hover,
+#slideshow a:focus {
 	border-bottom: 1px dashed #bc9d88;
 }
 
 
-figure > img {
+#slideshow figure > img {
 width: 800px;
 height : 450px;
 }
@@ -65,9 +65,8 @@ height : 450px;
 	position: relative;
 	width: 800px;
 	height: 450px;	
-	margin: 0 auto 2em;
 	float : center;
-    margin-top: 70px;
+    margin-top: 10px;
 }
 
 /* avanced box-shadow : http://www.creativejuiz.fr/blog/les-tutoriels/ombre-avancees-avec-css3-et-box-shadow */

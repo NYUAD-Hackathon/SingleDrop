@@ -13,7 +13,7 @@
 			<li class="menuItem"><a href="{{ url_for('user.profile') }}">Profile</a></li>
 			<li class="menuItem"><a href="{{ url_for('user.logout') }}">Logout</a></li>
 			{% else %}
-			<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
+			<li class="menuItem active"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
 			<li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
 			{% endif %}
 			<li class="menuItem"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
@@ -21,15 +21,12 @@
 	</nav>
 </header>
 
-<div class="home">
-	<p>Find Donors</p>
-</div>
-
 <div class="form">
-  <form class="cmxform" id="searchForm" style="margin-left:7%" action="{{ url_for('hospital.manage') }}" method="post">
+	<h1>Find Donors</h1>
+
+  <form class="cmxform" id="searchForm" action="{{ url_for('hospital.manage') }}" method="post">
 
     <div style="clear : both">
-        <hr style="margin-right:28%">
         <p>
             <label for="blood">Blood Type</label></br>
                 <select name="blood">
@@ -45,15 +42,12 @@
             </label>
         </p>
     </div>
-
+ 	<p style="clear:both">
+      <input type="submit" value="Search" name="Search" class="iscrit" style="margin-top : 0%">
+    </p>
     <div style="clear : both">
         <hr style="margin-right:28%">       
     </div>
-
-    <p>
-      <input type="submit" value="Search" name="Search" class="iscrit" style="float : right; margin-top : 100px">
-    </p>
-
   </form>
 </div>
 

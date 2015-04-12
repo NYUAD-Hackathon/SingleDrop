@@ -25,12 +25,10 @@
 <p class="error"><strong>Error:</strong>{{ error }}</p>
 {% endif %}
 
-<div class="home">
-  <p>Login</p>
-</div>
-
 <div class="form">
-  <form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('hospital.login') }}" method="post">
+  <h1>Login</h1>
+
+  <form class="cmxform" id="signupForm" action="{{ url_for('hospital.login') }}" method="post">
 
     <div style="clear : both">
       <p>

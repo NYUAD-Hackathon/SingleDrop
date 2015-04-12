@@ -16,21 +16,18 @@
 					<li class="menuItem"><a href="{{ url_for('hospital.manage') }}">Manage</a></li>
 					<li class="menuItem"><a href="{{ url_for('hospital.logout') }}">Logout</a></li>
 				{% endif %}
-				<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
+				<li class="menuItem active"><a href="{{ url_for('index.contacts') }}">Contact Us</a></li>
 			</ul>
 		</nav>
 	</header>
 
-	<div class="home">
-    <p> Contact Us</p>
-	</div>
-
 	<div class="form">
-		<p style="margin-left:7%">If you need further information or have any concerns please email us at: info@singledrop.com</p>
-		<p style="margin-left:7%">Telephone Number: +971 2 566 3260</p>
-		<p style="margin-left:7%">Single Drop</p>
-		<p  style="margin-left:7%">Al – Salam Building</p>
-		<p  style="margin-left:7%">Abu Dhabi<p style="margin-left:7%">UAE</p>
+    	<h1> Contact Us</h1>
+		<p >If you need further information or have any concerns please email us at: info@singledrop.com</p>
+		<p>Telephone Number: +971 2 566 3260</p>
+		<p>Single Drop</p>
+		<p>Al – Salam Building</p>
+		<p>Abu Dhabi, UAE</p>
 	</div>
 
 {% endblock %}

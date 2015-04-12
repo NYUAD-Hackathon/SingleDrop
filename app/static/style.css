@@ -5,22 +5,22 @@
 	url('./Font/CaviarDreams.ttf') format('truetype'),
 	url('./Font/CaviarDreams.svg') format('svg');
 }
-
+html {
+	background-color: rgb(249,249,249);;
+}
 body {
 	width: 1080px;
 	margin: 0 auto;
 	background-color : rgb(249,249,249);
+	font-family: 'CaviarDreams', Sans-Serif;
 }
 
 header {
 	height: 60px;
-	width: 100%;
-	margin-top: -76px;
-	margin-left: -7px;
 	padding: 0.5em;
 	z-index: 5;
 	background-color : rgb(249,249,249);
-	position: fixed;
+	border-bottom: 4px solid  #D32F2F;
 }
 
 header img {
@@ -34,9 +34,7 @@ header h1 {
 }
 
 nav {
-	border-bottom: 4px solid  #D32F2F;
-	position: fixed;
-	margin-top: 32px;
+	margin-top: 34px;
 
 }
 body img {
@@ -60,6 +58,10 @@ nav .menuItem{
 	display: inline-block;
 }
 
+nav .menuItem.active {
+	background-color: #D32F2F;
+}
+
 nav .menuItem > a {
 	text-decoration: none;
 	color: black;
@@ -69,6 +71,10 @@ nav .menuItem > a {
 	padding-top: 0.3em;
 	text-align: center;
 	border: none;
+}
+
+nav .menuItem.active  > a {
+	color: white;
 }
 
 nav .menuItem ul {
@@ -90,7 +96,7 @@ nav .menuItem ul li a {
 
 nav .menuItem a:hover {
 	background-color: rgba(0,190,156,0.2);
-	color : rgb(78,88,98);
+	color : white;
 }
 
 nav .menuItem:hover ul {
@@ -287,30 +293,15 @@ form {
 }
 
 input {
-	width: 1000px;
-	height: 20px;
 	margin-bottom: 8px;
-	font-family: 'CaviarDreams', Sans-Serif;
 }
 
 textarea {
-	width: 1000px;
 	margin-bottom: 8px;
-	font-family: 'CaviarDreams', Sans-Serif;
 }
 
 input[type=submit].cont {
-	width: 100px;
 	margin-bottom: 8px;
-	font-family: 'CaviarDreams', Sans-Serif;
-}
-
-input[type=submit].iscrit {
-	width: 120px;
-	height: 30px;
-	margin-bottom: 8px;
-	font-family: 'CaviarDreams', Sans-Serif;
-	margin-top: 20px;
 }
 
 table {
@@ -334,44 +325,35 @@ a.contact:hover, a.contact:focus {
 }
 
 div.form {
-	margin-left: 150px;
+	margin-left: 225px;
 }
 
 div.form input {
 	width: 200px;
 	height : 26px;
-	font-family:'CaviarDreams', Sans-Serif;
 	margin-top : 7px;
 }
 
 div.form input[type=radio] {
 	display: inline-block;
-	font-family:'CaviarDreams', Sans-Serif;
 	position: relative;
 	width: 20px;
 	margin-top: 10px;
 }
 
 div.form p {
-	font-family:'CaviarDreams', Sans-Serif;
 	margin-bottom: -1px;
 }
 
 div.form select {
 	height: 30px;
 	width: 200px;
-	font-family:'CaviarDreams', Sans-Serif;
 	margin-top: 7px;
 }
 
 div.form textarea {
 	width: 500px;
-	font-family:'CaviarDreams', Sans-Serif;
 	margin-left: 7px;
-}
-
-div.form label {
-	font-family:'CaviarDreams', Sans-Serif;
 }
 
 div.radio1 {
@@ -380,7 +362,6 @@ div.radio1 {
 
 div.radio1 p {
 	top: 20px;
-	font-family:'CaviarDreams', Sans-Serif;
 	display:none;
 	position: absolute;
 }
@@ -421,7 +402,6 @@ div.radio2 {
 
 div.radio2 p {
 	top: 20px;
-	font-family:'CaviarDreams', Sans-Serif;
 	display:none;
 	position: absolute;
 }
@@ -471,7 +451,6 @@ div.news > p {
 	font-size: 37px;
 	position: relative;
 	top: 52px;
-	font-family: 'CaviarDreams', Sans-Serif;
 }
 
 div.nouveau {
@@ -498,7 +477,6 @@ div.nouveau:hover {
 
 div.nouveau a {
 	margin: 0px;
-	font-family: 'CaviarDreams', Sans-Serif;
 	font-size: 24px;
 	color: black;
 	border: none;
@@ -532,7 +510,6 @@ div.Actu img {
 div.Actu p {
 	float: left;
 	color: #ffffff;
-	font-family: 'CaviarDreams', Sans-Serif;
 	font-size: 26px;
 }
 
@@ -548,7 +525,6 @@ div.read {
 
 div.read a {
 	color: #ffffff;
-	font-family: 'CaviarDreams', Sans-Serif;
 	font-size: 17px;
 	margin-left: 4px;
 	border: none;
@@ -589,7 +565,6 @@ div.mod hr {
 }
 
 div.mod a {
-	font-family: 'CaviarDreams', Sans-Serif;
 	font-size: 24px;
 	color: #ffffff;
 	border: none;
@@ -668,7 +643,6 @@ div.contenu {
 	float: left;
 	width: 100%;
 	border: 2px solid black;
-	font-family: 'CaviarDreams', Sans-Serif;
 }
 
 div.contenu p:nth-child(1) {
@@ -725,17 +699,10 @@ div.bas {
 	background-color: rgb(249,249,249);
 }
 
-div.home {
-	border-bottom: 2px solid black;
-	text-align: center;
-	margin-top: 70px;
-}
 
 div.home > p {
 	font-size: 37px;
-	position: relative;
-	top: 17px;
-	font-family: 'CaviarDreams', Sans-Serif;
+	font-style: bold;
 }
 
 div.liens {
@@ -772,7 +739,6 @@ div.liens ul li:hover {
 }
 
 div.slider_cont p {
-	font-family: CaviarDreams;
 	font-size: 43px;
 	color: #ffffff;
 	position: absolute;
@@ -781,7 +747,6 @@ div.slider_cont p {
 }
 
 div.cont p {
-	font-family: CaviarDreams;
 	font-size: 34px;
 	color: #ffffff;
 	position: absolute;
@@ -794,7 +759,6 @@ div.cont p {
 }
 
 div.cont1 p {
-	font-family: CaviarDreams;
 	font-size: 34px;
 	color: #ffffff;
 	position: absolute;
@@ -835,7 +799,6 @@ footer {
 footer ul:nth-child(1) {
 	float: left;
 	list-style-type: none;
-	font-family: CaviarDreams;
 	font-size: 11px;
 }
 
@@ -847,7 +810,6 @@ footer ul:nth-child(1) li {
 footer ul:nth-child(2) {
 	float: right;
 	list-style-type: none;
-	font-family: CaviarDreams;
 	font-size: 11px;
 }
 
@@ -899,21 +861,6 @@ div.bas{
 	background-color: rgb(249,249,249);
 }
 
-div.home{
-	border-bottom: 2px solid black;
-	margin-left:20%;
-	margin-right: 23%;
-	margin-top: 70px;
-}
-
-div.home >p {
-	font-size: 37px;
-	margin-left: 12%;
-	position: relative;
-	top: 20px;
-	font-family: 'CaviarDreams', Sans-Serif;
-	font-style: bold;
-}
 div.liens{
 	float: left;
 	margin-left: 40px;

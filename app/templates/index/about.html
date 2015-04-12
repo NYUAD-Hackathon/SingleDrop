@@ -5,7 +5,7 @@
 			<a href="{{ url_for('index.index') }}"><img src="{{ url_for('static', filename='pictures/logo.png') }}" style="width:200px" alt="" /></a>
 			<ul>
 				<li class="menuItem"><a href="{{ url_for('index.index') }}">Home</a></li>
-				<li class="menuItem" style="background-color: #D32F2F"><a href="{{ url_for('index.about') }}">About Us</a></li>
+				<li class="menuItem active"><a href="{{ url_for('index.about') }}">About Us</a></li>
 				{% if not session.get('logged_in') %}
 					<li class="menuItem"><a href="{{ url_for('user.registration') }}">Register</a></li>
 					<li class="menuItem"><a href="{{ url_for('user.login') }}">Login</a></li>
@@ -21,12 +21,9 @@
 		</nav>
 	</header>
 
-	<div class="home">
-    <p>About Us</p>
-	</div>
-
 	<div class="form">
-		<p style="margin-left:7%; margin-right:30%;">Single Drop is a startup project that focuses on facilitating the connection between blood donors and hospitals. We provide an innovative solution for hospitals to reach donors within their vicinity seamlessly.</p>
+	    <h1>About Us</h1>
+		<p>Single Drop is a startup project that focuses on facilitating the connection between blood donors and hospitals. We provide an innovative solution for hospitals to reach donors within their vicinity seamlessly.</p>
 	</div>
 
 {% endblock %}

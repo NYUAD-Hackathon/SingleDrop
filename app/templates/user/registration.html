@@ -25,12 +25,11 @@
 <p class="error"><strong>Error:</strong>{{ error }}</p>
 {% endif %}
 
-<div class="home">
-	<p>Registration Form </p>
-</div>
 
 <div class="form">
-	<form class="cmxform" id="signupForm" style="margin-left:7%" action="{{ url_for('user.registration') }}" method="post">
+	<h1>Registration Form </h1>
+
+	<form class="cmxform" id="signupForm" action="{{ url_for('user.registration') }}" method="post">
 
 		<div style="clear : both">
 			<p>
