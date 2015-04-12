@@ -32,7 +32,9 @@ def message(phone):
 
 	message = client.messages.create(to=phone, from_="+17313345839", body="Hello there!")
 
-	return make_response('Message sent', 200)
+	print message
+
+	return ""
 
 @mod_index.route('/api/call/<phone>', methods=['GET'])
 def call(phone):
@@ -45,7 +47,7 @@ def call(phone):
 			               from_="+17313345839", # Must be a valid Twilio number
 			               url="http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient")
 
-	return redirect("hospital/manage")
+	return ""
 
 @mod_index.route('/about')
 def about():

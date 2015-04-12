@@ -45,12 +45,7 @@ def manage():
 
 		users = sorted(users, key=lambda x: x.distance)[:n]
 
-		user_numbers = "[" + users[0].phone
-		for u in range(1, len(users)):
-			user_numbers += ", " + users[u].phone
-		user_numbers += "]"
-
-		return render_template("hospital/manage.html", users=users, blood_type=blood, user_numbers=user_numbers)
+		return render_template("hospital/manage.html", users=users, blood_type=blood)
 	return render_template('403.html')
 
 @mod_hospital.route('/login/', methods=['GET', 'POST'])
