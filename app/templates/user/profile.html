@@ -26,14 +26,14 @@
 	<h1>Profile</h1>
 	<form class="cmxform" id="signupForm" action="{{ url_for('user.profile') }}" method="post">
 
-		<div style="clear : both; margin-top:10px">	
+		<div class="formitem">	
 			<p>
 				<label for="last_donation">Date of last blood donation: </label></br>
 				<label>25/02/2012</label>
 			</p>
 		</div>
 
-		<div style="clear : both">
+		<div class="formitem">
 			<hr>
 			<p>
 				<label for="email">Email : </label></br>
@@ -41,7 +41,7 @@
 			</p>
 		</div>
 
-		<div style="clear : both">
+		<div class="formitem">
 			<hr>
 			<p>
 				<label for="name">Name : </label></br>
@@ -49,7 +49,7 @@
 			</p>
 		</div>
 
-		<div style="clear : both">
+		<div class="formitem">
 			<hr>
 			<p>
 				<label for="blood_type">Blood Type : </label></br>
@@ -57,47 +57,30 @@
 			</p> 
 		</div>
 
-		<div style="clear : both">
+		<div class="formitem">
 			<hr>
 			<p>
 				<label for="phone">Phone Number : </label></br>
-				<label>{{ user.phone }}</label></br>
-				<input id="phone" name="phone"  type="text" placeholder="+5555555555">
+				<input id="phone" name="phone"  value="{{ user.phone }}" type="text" placeholder="+5555555555">
 			</p>
 			<hr>	 
 		</div>
 
-		<div style="clear : both; margin-top:10px">
+		<div class="formitem">
 			<p>
 				<label for="neighborhood">Neighborhood: </label></br>
-				<label>{{ user.neighborhood }}</label></br>
 				<select name="neighborhood">
-					<option value="Al Aman">Al Aman</option>
-					<option value="Al Bateen">Al Bateen</option>
-					<option value="Al Dhafrah">Al Dhafrah</option>
-					<option value="Al Falah">Al Falah</option>
-					<option value="Al Karama">Al Karama</option>
-					<option value="Al Khubeirah">Al Khubeirah</option>
-					<option value="Al Lulu Island">Al Lulu Island</option>
-					<option value="Al Madina">Al Madina</option>
-					<option value="Al Manaseer">Al Manaseer</option>
-					<option value="Al Manhal">Al Manhal</option>
-					<option value="Al Maqtaa">Al Maqtaa</option>
-					<option value="Al Markaziyah">Al Markaziyah</option>
-					<option value="Al Meena">Al Meena</option>
-					<option value="Al Moroor">Al Moroor</option>
-					<option value="Al Mushrif">Al Mushrif</option>
-					<option value="Al Muzoon">Al Muzoon</option>
-					<option value="Al Nahyan">Al Nahyan</option>
+					{% for city in ["Al Aman", "Al Bateen", "Al Dhafrah", "Al Falah", "Al Karama", "Al Khubeirah", "Al Lulu Island", "Al Madina", "Al Manaseer", "Al Manhal", "Al Maqtaa", "Al Markaziyah", "Al Meena","Al Moroor","Al Mushrif","Al Muzoon","Al Nahyan"] %}
+						<option {% if city == user.neighborhood %} selected="selected" {% endif %} value={{ city }}>{{ city }}</option>
+					{% endfor %}
 				</select>
 			</p>
 			<hr>	 
 		</div>
 		
-		<div style="clear : both; margin-top:10px">
+		<div class="formitem">
 			<p>
 				<label for="city">City: </label></br>
-				<label>{{ user.city }}</label></br>
 				<select name="city">
 					<option value="Abu Dhabi">Abu Dhabi</option>
 				</select>
@@ -105,7 +88,7 @@
 		</div>
 
 		<p>
-			<input type="submit" value="Submit Changes" name="S'inscrire" class="iscrit" style="float : right; margin-top : 100px">
+			<input type="submit" value="Submit Changes" name="Sinscrire" class="iscrit" style="float : right; margin-top : 100px">
 		</p>
 	</form>
 </div>
