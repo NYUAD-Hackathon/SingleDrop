@@ -1,6 +1,16 @@
 # Import flask dependencies
 from flask import Blueprint, request, render_template, \
-                  flash, g, session, redirect, url_for
+				  flash, g, session, redirect, url_for
+
+# Download the twilio-python library from http://twilio.com/docs/libraries
+from twilio.rest import TwilioRestClient
+
+# Twilio number = +17313345839
+
+# Find these values at https://twilio.com/user/account
+account_sid = "ACa6519741271e9a4dc8536f2feb388c0"
+auth_token = "694e428d2de4bb3526eeed5f645a1661"
+client = TwilioRestClient(account_sid, auth_token)
 
 # Import password / encryption helper tools
 from werkzeug import check_password_hash, generate_password_hash
@@ -14,7 +24,19 @@ mod_index = Blueprint('index', __name__, url_prefix='')
 # Set the route and accepted methods
 @mod_index.route('/')
 def index():
-    return render_template("index/index.html")
+	return render_template("index/index.html")
+
+@mod_index.route('/api/message/<phone>', methods=['GET'])
+def message(phone):
+	message = client.messages.create(to=phone, from_="+17313345839", body="Hello there!")
+
+
+@mod_index.route('/api/call/<phone>', methods=['GET'])
+def call(phone):
+	# Make the call
+	call = client.calls.create(to=phone,  # Any phone number
+			               from_="+17313345839", # Must be a valid Twilio number
+			               url="http://twimlets.com/holdmusic?Bucket=com.twilio.music.ambient")
 
 @mod_index.route('/about')
 def about():

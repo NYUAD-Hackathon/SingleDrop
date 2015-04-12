@@ -42,6 +42,7 @@ def manage():
 			users = User.query.all()
 		for u in users:
 			u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
+
 		users = sorted(users, key=lambda x: x.distance)[:n]
 		return render_template("hospital/manage.html", users=users, blood_type=blood)
 	return render_template('403.html')
