@@ -52,8 +52,7 @@ def login():
 	if form.validate_on_submit():
 
 		hospital = Hospital.query.filter_by(name=form.name.data).first()
-		print "PASSWORD:", form.password.data
-		print "USER PASS:", hospital.password
+		
 		if hospital and hospital.password == form.password.data:
 
 			session['logged_in'] = True
