@@ -23,116 +23,126 @@
 
 <div class="form">
 	<h1>Find Donors</h1>
-  <form class="cmxform" id="searchForm" action="{{ url_for('hospital.manage') }}" method="post">
-    <div style="clear : both">
-        <p>
-            <label for="blood">Blood Type</label></br>
-                <select name="blood">
-                    {% for blood in ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] %}
-                        <option
-                        {% if blood_type == blood %}
-                            selected="selected"
-                        {% endif %}
-                            value={{ blood }}>{{ blood }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </label>
-        </p>
-    </div>
- 	<p style="clear:both">
-      <input type="submit" value="Search" name="Search" class="iscrit" style="margin-top : 0%">
-    </p>
-    <div style="clear : both">
-        <hr style="margin-right:28%">       
-    </div>
-  </form>
+	<form class="cmxform" id="searchForm" action="{{ url_for('hospital.manage') }}" method="post">
+		<div style="clear : both">
+			<p>
+				<label for="blood">Blood Type</label></br>
+					<select name="blood">
+						{% for blood in ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] %}
+							<option {% if blood_type == blood %} selected="selected" {% endif %} value={{ blood }}>{{ blood }}</option>
+						{% endfor %}
+					</select>
+				</label>
+			</p>
+		</div>
+		<p style="clear:both">
+			<input type="submit" value="Search" name="Search" class="iscrit" style="margin-top : 0%">
+		</p>
+		<div style="clear : both">
+			<hr style="margin-right:28%">       
+		</div>
+	</form>
 </div>
 <div class="form">
 	{% if not users %}
-	<h1>No donorsfound</h1>
+		<h1>No donorsfound</h1>
 	{% else %}
-	<table style="border-color:black">
-		<thead>
-			<tr>
-				<th width="7%">
-					<p>
-						<label for="name">Name: </label></br>
-					</p>
-				</th>
-                <th width="7%">
-                    <p>
-                        <label for="blood_type">Blood Type: </label></br>
-                    </p>
-                </th>
-				<th width="7%">
-					<p>
-						<label for="neighborhood">Neighborhood: </label></br>
-					</p>
-				</th>
-                <th width="7%">
-                    <p>
-                        <label for="city">City: </label></br>
-                    </p>
-                </th>
-				<th width="7%" colspan=2>
-					<p>
-						<label for="phone">Phone: </label></br>
-					</p>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for u in users %}
-			<tr>
-				<td width="100px">
-					<p>
-						<label>{{ u.name }}</label></br>
-					</p>
-				</td>
-                <td width="100px">
-                    <p>
-                        <label>{{ u.blood_type }}</label></br>
-                    </p>
-                </td>
-				<td width="100px">
-					<p>
-						<label>{{ u.neighborhood }}</label></br>
-					</p>
-				</td>
-                <td width="100px">
-                    <p>
-                        <label>{{ u.city }}</label></br>
-                    </p>
-                </td>
-				<td width="100px">
-					<p>
-						<label>{{ u.phone }}</label></br>
-					</p>
-				</td>
-				<td width="100px">
-					<p>
-						<label><a class="contact" href="{{ url_for('index.message', phone=u.phone) }}">Message</a></label>
-					</p>
-				</td>
-				<td width="100px">
-					<p>
-						<label><a class="contact" href="{{ url_for('index.call', phone=u.phone) }}">Call</a></label>
-					</p>
-				</td>
-			</tr>
-			{% endfor %}
-		</tbody>
+		<table style="border-color:black">
+			<thead>
+				<tr>
+					<th width="7%">
+						<p>
+							<label for="name">Name: </label></br>
+						</p>
+					</th>
+					<th width="7%">
+						<p>
+							<label for="blood_type">Blood Type: </label></br>
+						</p>
+					</th>
+					<th width="7%">
+						<p>
+							<label for="neighborhood">Neighborhood: </label></br>
+						</p>
+					</th>
+					<th width="7%">
+						<p>
+							<label for="city">City: </label></br>
+						</p>
+					</th>
+					<th width="7%" colspan=2>
+						<p>
+							<label for="phone">Phone: </label></br>
+						</p>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for u in users %}
+				<tr>
+					<td width="100px">
+						<p>
+							<label>{{ u.name }}</label></br>
+						</p>
+					</td>
+					<td width="100px">
+						<p>
+							<label>{{ u.blood_type }}</label></br>
+						</p>
+					</td>
+					<td width="100px">
+						<p>
+							<label>{{ u.neighborhood }}</label></br>
+						</p>
+					</td>
+					<td width="100px">
+						<p>
+							<label>{{ u.city }}</label></br>
+						</p>
+					</td>
+					<td width="100px">
+						<p>
+							<label>{{ u.phone }}</label></br>
+						</p>
+					</td>
+					<td width="100px">
+						<p>
+							<label onclick='send_message();'><div class="contact">Message</div></label>
+						</p>
+					</td>
+					<td width="100px">
+						<p>
+							<label onclick='make_call();'><div class="contact">Call</div></label>
+						</p>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
 		</table>
 		<div class="formitem">
-        <p>
-          <input type="submit" value="Message" name="S'inscrire" class="iscrit"/>
-          <input type="submit" value= "Call" name="S' inscrire" class="iscrit"/>
-        </p>
-    </div>
-	
-    
-
+			<p>
+				<input type="submit" value="Message" name="S'inscrire" class="iscrit"/>
+				<input type="submit" value= "Call" name="S' inscrire" class="iscrit"/>
+			</p>
+		</div>
+	{% endif %}
 </div>
-{% endif %}
+
+<script type="text/javascript">
+var send_message = function(){
+	$.ajax({
+		url: "{{ url_for('index.message', phone=u.phone) }}",
+		type: "post",
+		success: function(data){
+			window.alert('Message sent!');
+		},
+		error: function(jqXHR){
+			window.alert('Could not send message!');
+		}
+	});
+};
+var make_call = function(){
+	window.alert('Not supported yet!');
+}
+</script>
 {% endblock %}

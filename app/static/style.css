@@ -304,7 +304,7 @@ input[type=submit].cont {
 	margin-bottom: 8px;
 }
 table {
-	border-spacing: 7px;	
+	border-spacing: 7px;
 	border-color: 1px;
 	border-color: red;
 }
@@ -313,14 +313,14 @@ th {
 	text-align: left;
 }
 
-a.contact {
+div.contact {
 	text-decoration: none;
 	font-weight: bold;
 	color: #B82925;
 	border-bottom: 1px solid #D32F2F;
 }
 
-a.contact:hover, a.contact:focus {
+div.contact:hover, div.contact:focus {
 	border-bottom: 1px dashed #D32F2F;
 }
 
