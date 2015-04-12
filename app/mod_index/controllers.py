@@ -8,9 +8,7 @@ from twilio.rest import TwilioRestClient
 # Twilio number = +17313345839
 
 # Find these values at https://twilio.com/user/account
-account_sid = "ACa6519741271e9a4dc8536f2feb388c0"
-auth_token = "694e428d2de4bb3526eeed5f645a1661"
-client = TwilioRestClient(account_sid, auth_token)
+
 
 # Import password / encryption helper tools
 from werkzeug import check_password_hash, generate_password_hash
@@ -28,6 +26,10 @@ def index():
 
 @mod_index.route('/api/message/<phone>', methods=['GET'])
 def message(phone):
+	account_sid = "ACa6519741271e9a4dc8536f2feb388c0"
+	auth_token = "694e428d2de4bb3526eeed5f645a1661"
+	client = TwilioRestClient(account_sid, auth_token)
+
 	message = client.messages.create(to=phone, from_="+17313345839", body="Hello there!")
 
 
