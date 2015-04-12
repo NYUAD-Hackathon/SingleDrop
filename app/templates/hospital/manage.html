@@ -107,12 +107,12 @@
 					</td>
 					<td width="100px">
 						<p>
-							<label onclick='send_message();'><div class="contact">Message</div></label>
+							<button type="submit" onclick="send_message({{u.phone}});"><div class="contact">Message</div></button>
 						</p>
 					</td>
 					<td width="100px">
 						<p>
-							<label onclick='make_call();'><div class="contact">Call</div></label>
+							<label onclick="make_call();"><div class="contact">Call</div></label>
 						</p>
 					</td>
 				</tr>
@@ -129,10 +129,11 @@
 </div>
 
 <script type="text/javascript">
-var send_message = function(){
+var send_message = function(phone_number){
 	$.ajax({
-		url: "{{ url_for('index.message', phone=u.phone) }}",
-		type: "post",
+		url: "/api/message/" + phone_number,
+		type: "get",
+		dataType: 'json',
 		success: function(data){
 			window.alert('Message sent!');
 		},

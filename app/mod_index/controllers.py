@@ -24,7 +24,7 @@ mod_index = Blueprint('index', __name__, url_prefix='')
 def index():
 	return render_template("index/index.html")
 
-@mod_index.route('/api/message/<phone>', methods=['POST'])
+@mod_index.route('/api/message/<phone>', methods=['GET'])
 def message(phone):
 	account_sid = "ACa6519741271e9a4dc8536f2feb388c0f"
 	auth_token = "694e428d2de4bb3526eeed5f645a1661"
@@ -34,7 +34,7 @@ def message(phone):
 
 	return make_response('Message sent', 200)
 
-@mod_index.route('/api/call/<phone>', methods=['POST'])
+@mod_index.route('/api/call/<phone>', methods=['GET'])
 def call(phone):
 	account_sid = "ACa6519741271e9a4dc8536f2feb388c0f"
 	auth_token = "694e428d2de4bb3526eeed5f645a1661"
