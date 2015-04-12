@@ -26,6 +26,38 @@
 </div>
 
 <div class="form">
+  <form class="cmxform" id="searchForm" style="margin-left:7%" action="{{ url_for('hospital.manage') }}" method="post">
+
+    <div style="clear : both">
+        <hr style="margin-right:28%">
+        <p>
+            <label for="blood">Blood Type</label></br>
+                <select name="blood">
+                    {% for blood in ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"] %}
+                        <option
+                        {% if blood_type == blood %}
+                            selected="selected"
+                        {% endif %}
+                            value={{ blood }}>{{ blood }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </label>
+        </p>
+    </div>
+
+    <div style="clear : both">
+        <hr style="margin-right:28%">       
+    </div>
+
+    <p>
+      <input type="submit" value="Search" name="Search" class="iscrit" style="float : right; margin-top : 100px">
+    </p>
+
+  </form>
+</div>
+
+<div class="form">
 	<table>
 		<thead>
 			<tr>

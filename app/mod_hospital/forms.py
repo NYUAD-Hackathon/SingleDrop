@@ -25,3 +25,7 @@ class LoginForm(Form):
                 Required(message='name')])
     password = PasswordField('Password', [
                 Required(message='password')])
+
+class SearchForm(Form):
+    blood = TextField('Blood', [
+                Required(message='blood')])

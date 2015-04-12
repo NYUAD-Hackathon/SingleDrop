@@ -9,9 +9,7 @@ from werkzeug import check_password_hash, generate_password_hash
 from app import db
 
 # Import module forms
-from app.mod_hospital.forms import LoginForm
-
-from app.mod_hospital.forms import RegistrationForm
+from app.mod_hospital.forms import LoginForm, SearchForm, RegistrationForm
 
 # Import module models (i.e. User)
 from app.mod_hospital.models import Hospital
@@ -29,15 +27,23 @@ mod_hospital = Blueprint('hospital', __name__, url_prefix='/hospital')
 n = 10
 
 # Set the route and accepted methods
-@mod_hospital.route('/manage/')
+@mod_hospital.route('/manage/', methods=['GET', 'POST'])
 def manage():
 	if (session.get('hospital_id')):
+		form = SearchForm(request.form)
+		blood = None
+		if form.validate_on_submit():
+			blood = form.blood.data
+		print form.errors
 		hosp = Hospital.query.filter_by(id=session['hospital_id']).first()
-		users = User.query.all()
+		if blood:
+			users = User.query.filter_by(blood_type=blood).all()
+		else:
+			users = User.query.all()
 		for u in users:
 			u.distance = distance(hosp.lat, hosp.lon, u.lat, u.lon)
 		users = sorted(users, key=lambda x: x.distance)[:n]
-		return render_template("hospital/manage.html", users=users)
+		return render_template("hospital/manage.html", users=users, blood_type=blood)
 	return render_template('403.html')
 
 @mod_hospital.route('/login/', methods=['GET', 'POST'])
