@@ -26,7 +26,7 @@ def index():
 
 @mod_index.route('/api/message/<phone>', methods=['GET'])
 def message(phone):
-	account_sid = "ACa6519741271e9a4dc8536f2feb388c0"
+	account_sid = "ACa6519741271e9a4dc8536f2feb388c0f"
 	auth_token = "694e428d2de4bb3526eeed5f645a1661"
 	client = TwilioRestClient(account_sid, auth_token)
 
@@ -35,6 +35,10 @@ def message(phone):
 
 @mod_index.route('/api/call/<phone>', methods=['GET'])
 def call(phone):
+	account_sid = "ACa6519741271e9a4dc8536f2feb388c0f"
+	auth_token = "694e428d2de4bb3526eeed5f645a1661"
+	client = TwilioRestClient(account_sid, auth_token)
+	
 	# Make the call
 	call = client.calls.create(to=phone,  # Any phone number
 			               from_="+17313345839", # Must be a valid Twilio number
