@@ -125,7 +125,7 @@
 <script type="text/javascript">
 var send_message = function(phone_number){
 	$.ajax({
-		url: "/api/message/" + phone_number,
+		url: "/api/message/" + "+" + phone_number,
 		type: "get",
 		dataType: 'json',
 		success: function(data){
@@ -138,7 +138,7 @@ var send_message = function(phone_number){
 };
 var make_call = function(phone_number){
 	$.ajax({
-		url: "/api/call/" + phone_number,
+		url: "/api/call/" + "+" + phone_number,
 		type: "get",
 		dataType: 'json',
 		success: function(data){
