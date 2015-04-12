@@ -48,10 +48,10 @@
     </div>
   </form>
 </div>
-{% if not users %}
-<p>No donors matching criteria found!</p>
-{% else %}
 <div class="form">
+	{% if not users %}
+	<h1>No donorsfound</h1>
+	{% else %}
 	<table style="border-color:black">
 		<thead>
 			<tr>
